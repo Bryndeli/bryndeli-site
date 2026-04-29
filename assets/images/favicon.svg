@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-labelledby="title desc">
+  <title id="title">Bryndeli favicon</title>
+  <desc id="desc">Simplified Nest symbol optimised for small sizes.</desc>
+  <!-- Outer ring, simplified for legibility -->
+  <circle cx="16" cy="16" r="12" fill="none" stroke="#2F5D4E" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="49 22" transform="rotate(-32 16 16)"/>
+  <!-- Inner ring -->
+  <circle cx="16" cy="16" r="7" fill="none" stroke="#2F5D4E" stroke-width="2" stroke-linecap="round" stroke-dasharray="30 13" transform="rotate(64 16 16)"/>
+  <!-- Centre -->
+  <circle cx="16" cy="16" r="3" fill="#C9614A"/>
+</svg>

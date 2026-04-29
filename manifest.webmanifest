@@ -1,0 +1,24 @@
+{
+  "name": "Bryndeli",
+  "short_name": "Bryndeli",
+  "description": "The AI companion every frontline carer should have.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8EDE0",
+  "theme_color": "#2F5D4E",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/assets/images/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/app-icon-512-pwa.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

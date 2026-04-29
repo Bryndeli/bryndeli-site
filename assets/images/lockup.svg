@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" width="720" height="200" role="img" aria-labelledby="title desc">
+  <title id="title">Bryndeli — primary horizontal lockup</title>
+  <desc id="desc">The Nest symbol paired with the Bryndeli wordmark, set in a serif typeface.</desc>
+  <!-- Symbol -->
+  <g transform="translate(100 100)">
+    <circle cx="0" cy="0" r="76" fill="none" stroke="#2F5D4E" stroke-width="11" stroke-linecap="round" stroke-dasharray="310 138" transform="rotate(-32)"/>
+    <circle cx="0" cy="0" r="48" fill="none" stroke="#2F5D4E" stroke-width="9" stroke-linecap="round" stroke-dasharray="206 88" transform="rotate(64)"/>
+    <circle cx="0" cy="0" r="17" fill="#C9614A"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="220" y="124" font-family="Charter, 'Iowan Old Style', 'Source Serif Pro', Georgia, serif" font-size="92" font-weight="500" fill="#2F5D4E" letter-spacing="-2.5">bryndeli</text>
+</svg>

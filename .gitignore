@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.cursor/
+.windsurf/
+
+# Node (if you add tooling later)
+node_modules/
+package-lock.json
+.pnpm-debug.log*
+
+# Build artefacts (none currently — site is plain static)
+dist/
+build/
+
+# Local previews from CMS or screenshot tools
+preview-*.png
+preview-*.jpg
+*.local

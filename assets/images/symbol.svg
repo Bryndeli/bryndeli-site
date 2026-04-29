@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="title desc">
+  <title id="title">Bryndeli symbol</title>
+  <desc id="desc">The Nest — two concentric broken rings around a terracotta centre.</desc>
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="76" fill="none" stroke="#2F5D4E" stroke-width="11" stroke-linecap="round" stroke-dasharray="310 138" transform="rotate(-32 100 100)"/>
+  <!-- Inner ring -->
+  <circle cx="100" cy="100" r="48" fill="none" stroke="#2F5D4E" stroke-width="9" stroke-linecap="round" stroke-dasharray="206 88" transform="rotate(64 100 100)"/>
+  <!-- Held centre -->
+  <circle cx="100" cy="100" r="17" fill="#C9614A"/>
+</svg>
