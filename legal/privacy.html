@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Bryndeli</title>
+<meta name="description" content="How Bryndeli collects, uses, and protects personal data. UK GDPR compliant.">
+<meta name="theme-color" content="#F8EDE0">
+<meta name="robots" content="index, follow">
+
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/images/app-icon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --pine: #2F5D4E;
+    --pine-deep: #1F4034;
+    --terracotta: #C9614A;
+    --oat: #F8EDE0;
+    --oat-deep: #EFE2D0;
+    --honey: #E0B469;
+    --bark: #2A2520;
+    --bark-soft: #4A423A;
+    --rule: rgba(47, 93, 78, 0.14);
+    --rule-strong: rgba(47, 93, 78, 0.28);
+    --serif: 'Fraunces', 'Charter', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', 'SF Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--oat);
+    color: var(--bark);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 1;
+    opacity: 0.4; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.36 0 0 0 0 0.31 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  ::selection { background: var(--terracotta); color: var(--oat); }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ============= NAV ============= */
+  nav {
+    padding: 28px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-lockup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .logo-lockup svg { width: 32px; height: 32px; }
+  .logo-lockup .word {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    color: var(--pine);
+  }
+  .nav-back {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--bark-soft);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--pine); }
+
+  /* ============= DRAFT BANNER ============= */
+  .draft-banner {
+    background: var(--terracotta);
+    color: var(--oat);
+    padding: 14px 32px;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 0 -32px 48px;
+    border-radius: 8px;
+  }
+  .draft-banner strong { font-weight: 600; }
+
+  /* ============= HEADER ============= */
+  header.page-head {
+    padding: 24px 0 56px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 56px;
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--pine);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-variation-settings: 'opsz' 100;
+    font-size: clamp(38px, 5vw, 56px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--pine-deep);
+    margin-bottom: 18px;
+  }
+  .meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--bark-soft);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .meta span + span::before {
+    content: ' · ';
+    margin: 0 4px;
+    color: var(--rule-strong);
+  }
+
+  /* ============= CONTENT ============= */
+  main { padding-bottom: 88px; }
+
+  .toc {
+    background: var(--oat-deep);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 56px;
+  }
+  .toc h3 {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--pine);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+  .toc ol {
+    list-style: none;
+    counter-reset: toc-counter;
+    columns: 2;
+    column-gap: 32px;
+  }
+  .toc li {
+    counter-increment: toc-counter;
+    padding: 4px 0 4px 24px;
+    position: relative;
+    font-size: 13.5px;
+    break-inside: avoid;
+  }
+  .toc li::before {
+    content: counter(toc-counter, lower-roman) ".";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--terracotta);
+    font-size: 13px;
+  }
+  .toc a {
+    color: var(--bark);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .toc a:hover { color: var(--pine); }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--pine-deep);
+    letter-spacing: -0.018em;
+    margin: 48px 0 18px;
+    line-height: 1.2;
+    scroll-margin-top: 24px;
+  }
+  h2:first-child { margin-top: 0; }
+  h2 .section-num {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--terracotta);
+    font-weight: 400;
+    margin-right: 8px;
+  }
+
+  h3 {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--pine-deep);
+    letter-spacing: -0.01em;
+    margin: 32px 0 12px;
+    line-height: 1.3;
+  }
+
+  p { font-size: 15px; color: var(--bark); margin-bottom: 16px; }
+  p:last-child { margin-bottom: 0; }
+
+  ul.list, ol.list {
+    margin: 0 0 20px 24px;
+  }
+  ul.list li, ol.list li {
+    font-size: 15px;
+    color: var(--bark);
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }
+  ul.list { list-style: none; }
+  ul.list li {
+    position: relative;
+    padding-left: 18px;
+  }
+  ul.list li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 11px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--terracotta);
+  }
+
+  strong { font-weight: 600; color: var(--pine-deep); }
+
+  a.link {
+    color: var(--pine);
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    transition: background-size 0.3s;
+  }
+  a.link:hover { background-size: 100% 2px; }
+
+  .callout {
+    background: var(--oat-deep);
+    border-left: 3px solid var(--terracotta);
+    padding: 18px 22px;
+    border-radius: 0 8px 8px 0;
+    margin: 24px 0;
+    font-size: 14px;
+    color: var(--bark-soft);
+    line-height: 1.65;
+  }
+  .callout strong { color: var(--pine-deep); }
+
+  /* ============= TABLE ============= */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  th {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--pine);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    background: var(--oat-deep);
+  }
+  td { color: var(--bark); }
+
+  /* ============= FOOTER ============= */
+  footer.page-foot {
+    margin-top: 88px;
+    padding: 32px 0;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--bark-soft);
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  @media (max-width: 580px) {
+    .container { padding: 0 20px; }
+    .toc ol { columns: 1; }
+    h1 { font-size: 32px; }
+    h2 { font-size: 22px; }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--terracotta);
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <nav>
+    <a href="/" class="logo-lockup" aria-label="Bryndeli home">
+      <svg viewBox="0 0 200 200" aria-hidden="true">
+        <circle cx="100" cy="100" r="76" fill="none" stroke="#2F5D4E" stroke-width="11" stroke-linecap="round" stroke-dasharray="310 138" transform="rotate(-32 100 100)"/>
+        <circle cx="100" cy="100" r="48" fill="none" stroke="#2F5D4E" stroke-width="9" stroke-linecap="round" stroke-dasharray="206 88" transform="rotate(64 100 100)"/>
+        <circle cx="100" cy="100" r="17" fill="#C9614A"/>
+      </svg>
+      <span class="word">bryndeli</span>
+    </a>
+    <a href="/" class="nav-back">← Back to home</a>
+  </nav>
+
+  <div class="draft-banner">
+    <strong>Draft</strong> — Under legal review. Final version pending solicitor sign-off.
+  </div>
+
+  <header class="page-head">
+    <div class="eyebrow">Legal</div>
+    <h1>Privacy Policy</h1>
+    <div class="meta">
+      <span>Effective: 30 April 2026</span>
+      <span>Last updated: 30 April 2026</span>
+      <span>Version 0.1</span>
+    </div>
+  </header>
+
+  <main>
+
+    <p>This Privacy Policy describes how <strong>Bryndeli Ltd</strong> ("Bryndeli," "we," "us") collects, uses, and protects personal data when you use our website at <a href="https://bryndeli.co.uk" class="link">bryndeli.co.uk</a> ("the Site") or our software service ("the Service").</p>
+
+    <p>Bryndeli is a UK company registered in England and Wales. We are committed to protecting your privacy and complying with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.</p>
+
+    <div class="callout">
+      <strong>Quick summary.</strong> We collect the minimum data we need to operate the Site and Service. We don't sell your data. We host your data in the UK. You can ask us at any time what we hold on you, ask us to delete it, or ask us to send it to another provider.
+    </div>
+
+    <div class="toc">
+      <h3>Contents</h3>
+      <ol>
+        <li><a href="#who-we-are">Who we are</a></li>
+        <li><a href="#what-we-collect">What we collect</a></li>
+        <li><a href="#how-we-use">How we use it</a></li>
+        <li><a href="#legal-basis">Legal basis</a></li>
+        <li><a href="#sharing">Who we share with</a></li>
+        <li><a href="#international">International transfers</a></li>
+        <li><a href="#retention">How long we keep it</a></li>
+        <li><a href="#your-rights">Your rights</a></li>
+        <li><a href="#cookies">Cookies</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">How to contact us</a></li>
+      </ol>
+    </div>
+
+    <h2 id="who-we-are"><span class="section-num">i.</span>Who we are</h2>
+    <p>Bryndeli Ltd is the data controller for personal data collected through the Site. Where we process data on behalf of a care provider using our Service (for example, care plans uploaded by a care provider), we act as a data processor and the care provider is the data controller.</p>
+    <p>Our registered address and contact details are set out in <a href="#contact" class="link">section xiii</a> below.</p>
+
+    <h2 id="what-we-collect"><span class="section-num">ii.</span>What we collect</h2>
+
+    <h3>Information you give us directly</h3>
+    <ul class="list">
+      <li><strong>When you contact us</strong> (e.g. by email or via the demo request form): your name, email address, organisation name, and the contents of your message.</li>
+      <li><strong>When you join our waitlist</strong> (if applicable): your email address and any optional information you choose to share, such as your role.</li>
+      <li><strong>When your organisation becomes a customer</strong>: account information, billing information, and any data your organisation chooses to upload to the Service.</li>
+    </ul>
+
+    <h3>Information collected automatically</h3>
+    <ul class="list">
+      <li><strong>Server logs</strong>: when you visit the Site, our hosting provider logs your IP address, browser type, the pages you view, and the time of your visit. This is for security and operational purposes.</li>
+      <li><strong>Cookies</strong>: see <a href="#cookies" class="link">section ix</a>.</li>
+    </ul>
+
+    <h3>Information from third parties</h3>
+    <p>We may receive information about you from publicly available sources (for example, LinkedIn or Companies House) when researching prospects, or from your organisation if they refer you to us.</p>
+
+    <h2 id="how-we-use"><span class="section-num">iii.</span>How we use it</h2>
+    <p>We use personal data for the following purposes:</p>
+    <ul class="list">
+      <li><strong>To respond to enquiries</strong> and arrange demonstrations of the Service.</li>
+      <li><strong>To provide the Service</strong> to organisations that become customers, including hosting, processing, and supporting their use of the Service.</li>
+      <li><strong>To improve the Service</strong>, including analysing aggregated and anonymised usage patterns.</li>
+      <li><strong>To send service-related communications</strong>, such as notices about changes to the Service or this policy.</li>
+      <li><strong>To send marketing communications</strong> only where you have given us consent or where we have a legitimate interest in doing so (and you have not opted out).</li>
+      <li><strong>To meet our legal obligations</strong>, including responding to lawful requests from public authorities.</li>
+    </ul>
+
+    <h2 id="legal-basis"><span class="section-num">iv.</span>Legal basis</h2>
+    <p>Under UK GDPR, we must have a lawful basis to process your personal data. The legal bases we rely on are:</p>
+
+    <table>
+      <thead>
+        <tr><th>Activity</th><th>Lawful basis</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Responding to your enquiry</td><td>Legitimate interests / Pre-contractual steps at your request</td></tr>
+        <tr><td>Providing the Service to your organisation</td><td>Performance of a contract</td></tr>
+        <tr><td>Sending marketing emails</td><td>Consent (where required) or Legitimate interests</td></tr>
+        <tr><td>Improving the Service</td><td>Legitimate interests</td></tr>
+        <tr><td>Meeting legal obligations</td><td>Legal obligation</td></tr>
+      </tbody>
+    </table>
+
+    <p>You have the right to object to processing based on legitimate interests at any time — see <a href="#your-rights" class="link">section viii</a>.</p>
+
+    <h2 id="sharing"><span class="section-num">v.</span>Who we share with</h2>
+    <p>We do not sell your personal data. We share it only with:</p>
+    <ul class="list">
+      <li><strong>Service providers</strong> who help us run the Site and Service — including our hosting provider (Vercel), our domain registrar (Porkbun), email service providers, and any AI infrastructure providers we use to deliver the Service. These providers are bound by contracts to protect your data.</li>
+      <li><strong>Professional advisers</strong> such as our accountants and lawyers, where reasonably necessary.</li>
+      <li><strong>Public authorities</strong> where required by law, such as in response to a court order or a request from a regulator.</li>
+      <li><strong>A successor</strong> in the event of a merger, acquisition, or sale of all or part of our business.</li>
+    </ul>
+    <p>A current list of our key sub-processors is available on request from <a href="mailto:hello@bryndeli.co.uk" class="link">hello@bryndeli.co.uk</a>.</p>
+
+    <h2 id="international"><span class="section-num">vi.</span>International transfers</h2>
+    <p>Where possible, we host data in the UK. Some of our service providers (for example, software infrastructure providers) may process data in the European Economic Area, the United States, or other countries.</p>
+    <p>Where data is transferred outside the UK or EEA, we rely on UK adequacy regulations or we put in place appropriate safeguards such as the UK International Data Transfer Agreement or the EU Standard Contractual Clauses with the UK Addendum. You can request a copy of the safeguards by contacting us.</p>
+
+    <h2 id="retention"><span class="section-num">vii.</span>How long we keep it</h2>
+    <p>We keep personal data only for as long as necessary for the purposes set out in this policy, or as required by law. Specifically:</p>
+    <ul class="list">
+      <li><strong>Enquiries and demo requests</strong>: up to 24 months from your last interaction with us, unless you become a customer.</li>
+      <li><strong>Customer data</strong>: for the duration of the contract with your organisation, plus a reasonable period afterwards as set out in our customer agreement.</li>
+      <li><strong>Server logs</strong>: typically 30 days, except where retained for security investigations.</li>
+      <li><strong>Financial records</strong>: 6 years, as required by HMRC.</li>
+    </ul>
+
+    <h2 id="your-rights"><span class="section-num">viii.</span>Your rights</h2>
+    <p>Under UK GDPR you have the following rights in relation to your personal data:</p>
+    <ul class="list">
+      <li><strong>Access</strong>: ask us what data we hold on you.</li>
+      <li><strong>Rectification</strong>: ask us to correct inaccurate data.</li>
+      <li><strong>Erasure</strong>: ask us to delete your data ("the right to be forgotten"), subject to legal exceptions.</li>
+      <li><strong>Restriction</strong>: ask us to limit how we use your data.</li>
+      <li><strong>Portability</strong>: ask us to send your data to another provider in a structured, machine-readable format.</li>
+      <li><strong>Objection</strong>: object to processing based on legitimate interests, including direct marketing.</li>
+      <li><strong>Withdraw consent</strong>: where we rely on consent, withdraw it at any time.</li>
+      <li><strong>Complain</strong>: lodge a complaint with the UK Information Commissioner's Office at <a href="https://ico.org.uk" class="link">ico.org.uk</a> if you think we have mishandled your data.</li>
+    </ul>
+    <p>To exercise any of these rights, contact us at <a href="mailto:hello@bryndeli.co.uk" class="link">hello@bryndeli.co.uk</a>. We will respond within one calendar month.</p>
+
+    <h2 id="cookies"><span class="section-num">ix.</span>Cookies</h2>
+    <p>The Site currently uses only strictly necessary cookies — those that are required for the Site to function, such as session cookies. We do not currently use analytics, advertising, or tracking cookies.</p>
+    <p>If we add analytics or tracking cookies in the future, we will update this policy and ask for your consent through a cookie banner.</p>
+
+    <h2 id="security"><span class="section-num">x.</span>Security</h2>
+    <p>We take security seriously and have implemented appropriate technical and organisational measures to protect your data, including:</p>
+    <ul class="list">
+      <li>Encryption in transit (HTTPS/TLS) and at rest where technically feasible.</li>
+      <li>Access controls limiting who at Bryndeli can access personal data.</li>
+      <li>Vendor due diligence on all sub-processors.</li>
+      <li>Alignment with the NHS Data Security and Protection Toolkit (DSPT) standards as we scale.</li>
+    </ul>
+    <p>No system is perfectly secure, and we cannot guarantee absolute security. If we become aware of a data breach affecting your personal data, we will notify you and the Information Commissioner's Office in accordance with UK GDPR.</p>
+
+    <h2 id="children"><span class="section-num">xi.</span>Children</h2>
+    <p>The Site and Service are not intended for children. We do not knowingly collect personal data from anyone under the age of 18 through the Site. If you believe we have inadvertently collected data from a child, contact us and we will delete it.</p>
+    <p>This is separate from any data about service users (including children) that may appear in care plans uploaded to the Service by a care provider — that data is processed on behalf of the care provider as data controller and governed by their own privacy notices and our customer agreement.</p>
+
+    <h2 id="changes"><span class="section-num">xii.</span>Changes to this policy</h2>
+    <p>We may update this policy from time to time. The "Last updated" date at the top of this page reflects the most recent version. For material changes, we will notify users with active accounts by email at least 30 days before the changes take effect.</p>
+
+    <h2 id="contact"><span class="section-num">xiii.</span>How to contact us</h2>
+    <p>If you have any questions, requests, or complaints about this policy or how we handle your data, please contact us at:</p>
+    <p>
+      <strong>Bryndeli Ltd</strong><br>
+      Telford, United Kingdom<br>
+      Email: <a href="mailto:hello@bryndeli.co.uk" class="link">hello@bryndeli.co.uk</a>
+    </p>
+    <p>You also have the right to lodge a complaint with the UK Information Commissioner's Office at <a href="https://ico.org.uk" class="link">ico.org.uk</a> or by phone on 0303 123 1113.</p>
+
+  </main>
+
+  <footer class="page-foot">
+    <span>© 2026 Bryndeli Ltd · Registered in England &amp; Wales</span>
+    <span>Made in Telford</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
