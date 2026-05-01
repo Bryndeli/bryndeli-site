@@ -847,17 +847,12 @@ h2 em {
     gap: 16px;
   }
   .steps::before { display: none; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-  .nav-links { display: none; }
-  .nav-toggle { display: inline-flex; }
   .testimonial-quote-mark { font-size: 160px; top: 60px; }
 }
 @media (max-width: 580px) {
   :root { --gutter: 20px; }
   section { padding: 72px 0; }
   .day, .how, .cta { padding-left: var(--gutter); padding-right: var(--gutter); padding-top: 80px; padding-bottom: 80px; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
 
 
