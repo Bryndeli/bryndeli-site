@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — Bryndeli</title>
-<meta name="description" content="The story behind Bryndeli — why we're building the AI companion every frontline carer should have. Made in Telford.">
+<title>About Bryndeli — What we believe and why.</title>
+<meta name="description" content="Bryndeli is the AI companion every frontline carer should have. Made in Telford. Here's what we believe and why those beliefs shape every decision.">
 <meta name="theme-color" content="#F8EDE0">
 <meta name="robots" content="index, follow">
 
-<meta property="og:title" content="About Bryndeli — Made in Telford for UK frontline carers.">
-<meta property="og:description" content="The story behind Bryndeli, the AI companion every frontline carer should have.">
+<meta property="og:title" content="About Bryndeli — What we believe and why.">
+<meta property="og:description" content="Care is delivered in moments, not documents. Here's what we believe and why those beliefs shape every decision.">
 <meta property="og:image" content="/assets/images/og-image.png">
 <meta property="og:url" content="https://bryndeli.co.uk/about">
 <meta property="og:type" content="website">
@@ -23,500 +23,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<style>
-  :root {
-    --pine: #2F5D4E;
-    --pine-deep: #1F4034;
-    --pine-soft: #4A7868;
-    --terracotta: #C9614A;
-    --terracotta-deep: #A84A35;
-    --oat: #F8EDE0;
-    --oat-deep: #EFE2D0;
-    --oat-warm: #F2E5D0;
-    --honey: #E0B469;
-    --bark: #2A2520;
-    --bark-soft: #4A423A;
-    --rule: rgba(47, 93, 78, 0.14);
-    --rule-strong: rgba(47, 93, 78, 0.28);
-    --serif: 'Fraunces', 'Charter', Georgia, serif;
-    --sans: 'Inter', -apple-system, sans-serif;
-    --mono: 'JetBrains Mono', 'SF Mono', monospace;
-    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: var(--sans);
-    background: var(--oat);
-    color: var(--bark);
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  body::before {
-    content: '';
-    position: fixed; inset: 0;
-    pointer-events: none; z-index: 1;
-    opacity: 0.4; mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.36 0 0 0 0 0.31 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-
-  ::selection { background: var(--terracotta); color: var(--oat); }
-
-  .container {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 0 32px;
-    position: relative;
-    z-index: 2;
-  }
-
-  .container.wide { max-width: 1100px; }
-
-  /* ============= NAV ============= */
-  nav {
-    padding: 28px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .logo-lockup {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-  }
-  .logo-lockup svg { width: 32px; height: 32px; transition: transform 0.5s var(--ease); }
-  .logo-lockup:hover svg { transform: rotate(64deg); }
-  .logo-lockup .word {
-    font-family: var(--serif);
-    font-size: 24px;
-    font-weight: 500;
-    letter-spacing: -0.025em;
-    color: var(--pine);
-  }
-  .nav-back {
-    font-family: var(--sans);
-    font-size: 13px;
-    color: var(--bark-soft);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .nav-back:hover { color: var(--pine); }
-
-  /* ============= HEADER ============= */
-  header.page-head {
-    padding: 40px 0 56px;
-  }
-  .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--pine);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 24px;
-    font-weight: 500;
-  }
-  .eyebrow::before {
-    content: '';
-    width: 28px;
-    height: 1px;
-    background: var(--terracotta);
-  }
-  h1 {
-    font-family: var(--serif);
-    font-variation-settings: 'opsz' 144;
-    font-size: clamp(40px, 5.4vw, 68px);
-    font-weight: 400;
-    line-height: 1.02;
-    letter-spacing: -0.03em;
-    color: var(--pine-deep);
-    margin-bottom: 28px;
-  }
-  h1 em { font-style: italic; font-weight: 500; color: var(--terracotta); }
-
-  .subhead {
-    font-family: var(--serif);
-    font-size: 22px;
-    line-height: 1.45;
-    color: var(--bark-soft);
-    font-style: italic;
-    max-width: 600px;
-    letter-spacing: -0.01em;
-  }
-
-  /* ============= STORY SECTION ============= */
-  .story {
-    padding: 64px 0 32px;
-  }
-
-  .story-meta {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 56px;
-    align-items: start;
-    padding-bottom: 56px;
-    border-bottom: 1px solid var(--rule);
-    margin-bottom: 56px;
-  }
-
-  .author-card {
-    position: sticky;
-    top: 32px;
-  }
-
-  .author-photo {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background: var(--oat-deep);
-    border-radius: 16px;
-    margin-bottom: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid var(--rule);
-  }
-
-  /* Placeholder graphic in lieu of an actual founder photo */
-  .author-photo .placeholder-mark {
-    width: 64%;
-    height: 64%;
-    opacity: 0.30;
-  }
-
-  .author-photo::after {
-    content: 'Photo placeholder';
-    position: absolute;
-    bottom: 12px;
-    left: 0; right: 0;
-    text-align: center;
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.10em;
-    text-transform: uppercase;
-    color: var(--pine);
-    opacity: 0.6;
-  }
-
-  .author-name {
-    font-family: var(--serif);
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--pine-deep);
-    letter-spacing: -0.01em;
-    margin-bottom: 4px;
-  }
-  .author-role {
-    font-size: 13px;
-    color: var(--bark-soft);
-    margin-bottom: 14px;
-  }
-  .author-links {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-  .author-links a {
-    color: var(--bark-soft);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .author-links a:hover { color: var(--pine); }
-
-  .story-prose {
-    font-family: var(--serif);
-  }
-
-  .story-prose p {
-    font-size: 18px;
-    line-height: 1.65;
-    color: var(--bark);
-    margin-bottom: 22px;
-    letter-spacing: -0.005em;
-  }
-  .story-prose p:first-child::first-letter {
-    font-family: var(--serif);
-    font-size: 72px;
-    font-weight: 500;
-    float: left;
-    line-height: 0.85;
-    margin: 6px 12px 0 -2px;
-    color: var(--terracotta);
-    font-style: italic;
-  }
-
-  .story-prose em { font-style: italic; color: var(--terracotta); font-weight: 500; }
-  .story-prose strong { font-weight: 600; color: var(--pine-deep); }
-
-  .pullquote {
-    font-family: var(--serif);
-    font-size: 28px;
-    font-weight: 400;
-    font-style: italic;
-    line-height: 1.25;
-    color: var(--pine-deep);
-    letter-spacing: -0.018em;
-    padding: 14px 0 14px 28px;
-    border-left: 3px solid var(--terracotta);
-    margin: 36px 0;
-    max-width: 90%;
-  }
-  .pullquote em { color: var(--terracotta); font-weight: 500; }
-
-  /* ============= BELIEFS ============= */
-  .beliefs {
-    background: var(--pine-deep);
-    color: var(--oat);
-    margin: 80px calc(50% - 50vw) 80px calc(50% - 50vw);
-    padding: 96px 32px;
-    position: relative;
-    overflow: hidden;
-  }
-  .beliefs-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-  }
-  .beliefs::before, .beliefs::after {
-    content: '';
-    position: absolute;
-    border: 1px solid rgba(248, 237, 224, 0.07);
-    border-radius: 50%;
-    pointer-events: none;
-  }
-  .beliefs::before { top: -160px; right: -160px; width: 480px; height: 480px; }
-  .beliefs::after { bottom: -120px; left: -120px; width: 360px; height: 360px; }
-
-  .beliefs .eyebrow { color: rgba(255, 197, 175, 0.95); }
-  .beliefs .eyebrow::before { background: var(--terracotta); }
-
-  .beliefs h2 {
-    font-family: var(--serif);
-    font-size: clamp(34px, 4.4vw, 50px);
-    font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: -0.025em;
-    color: var(--oat);
-    margin-bottom: 18px;
-  }
-  .beliefs h2 em { font-style: italic; font-weight: 500; color: var(--honey); }
-
-  .beliefs-lead {
-    font-size: 18px;
-    color: rgba(248, 237, 224, 0.78);
-    max-width: 540px;
-    margin-bottom: 64px;
-  }
-
-  .belief-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 56px;
-  }
-
-  .belief {
-    position: relative;
-  }
-  .belief-num {
-    font-family: var(--serif);
-    font-size: 56px;
-    font-weight: 400;
-    font-style: italic;
-    color: var(--terracotta);
-    line-height: 1;
-    margin-bottom: 22px;
-  }
-  .belief h3 {
-    font-family: var(--serif);
-    font-size: 24px;
-    font-weight: 500;
-    color: var(--oat);
-    line-height: 1.2;
-    letter-spacing: -0.018em;
-    margin-bottom: 14px;
-  }
-  .belief p {
-    font-size: 15px;
-    color: rgba(248, 237, 224, 0.72);
-    line-height: 1.65;
-  }
-
-  /* ============= TELFORD CARD ============= */
-  .telford {
-    padding: 96px 0;
-    position: relative;
-  }
-  .telford-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    align-items: center;
-  }
-  .telford h2 {
-    font-family: var(--serif);
-    font-size: clamp(32px, 4vw, 44px);
-    font-weight: 400;
-    line-height: 1.08;
-    letter-spacing: -0.025em;
-    color: var(--pine-deep);
-    margin-bottom: 22px;
-  }
-  .telford h2 em { font-style: italic; font-weight: 500; color: var(--terracotta); }
-  .telford p {
-    font-size: 16px;
-    color: var(--bark-soft);
-    margin-bottom: 16px;
-    line-height: 1.65;
-  }
-  .telford-stamp {
-    aspect-ratio: 1 / 1;
-    background: var(--oat-deep);
-    border: 1px solid var(--rule);
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px;
-    position: relative;
-  }
-  .telford-stamp .stamp-circle {
-    width: 130px;
-    height: 130px;
-    border: 2px solid var(--terracotta);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    transform: rotate(-6deg);
-    position: relative;
-  }
-  .telford-stamp .stamp-text {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    color: var(--terracotta);
-    text-transform: uppercase;
-    font-weight: 500;
-    text-align: center;
-    line-height: 1.5;
-  }
-  .telford-stamp .telford-coords {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.10em;
-    color: var(--pine);
-    margin-top: 24px;
-    opacity: 0.7;
-    text-transform: uppercase;
-  }
-
-  /* ============= CTA ============= */
-  .cta-strip {
-    padding: 80px 0;
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    text-align: center;
-  }
-  .cta-strip h2 {
-    font-family: var(--serif);
-    font-size: clamp(28px, 3.4vw, 40px);
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--pine-deep);
-    margin-bottom: 14px;
-  }
-  .cta-strip h2 em { font-style: italic; font-weight: 500; color: var(--terracotta); }
-  .cta-strip p {
-    font-size: 16px;
-    color: var(--bark-soft);
-    max-width: 480px;
-    margin: 0 auto 32px;
-  }
-  .cta-buttons {
-    display: flex;
-    gap: 14px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 14px 26px;
-    background: var(--pine);
-    color: var(--oat);
-    text-decoration: none;
-    border-radius: 999px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: transform 0.2s, background 0.2s;
-  }
-  .btn:hover { background: var(--pine-deep); transform: translateY(-1px); }
-  .btn-outline {
-    background: transparent;
-    color: var(--pine);
-    border: 1px solid var(--rule-strong);
-  }
-  .btn-outline:hover { background: var(--pine); color: var(--oat); border-color: var(--pine); }
-
-  /* ============= FOOTER ============= */
-  footer.page-foot {
-    margin-top: 0;
-    padding: 32px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    color: var(--bark-soft);
-    text-transform: uppercase;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  /* ============= RESPONSIVE ============= */
-  @media (max-width: 880px) {
-    .story-meta { grid-template-columns: 1fr; gap: 32px; }
-    .author-card { position: static; max-width: 280px; }
-    .belief-grid { grid-template-columns: 1fr; gap: 40px; }
-    .telford-grid { grid-template-columns: 1fr; gap: 32px; }
-    .telford-stamp { max-width: 320px; margin: 0 auto; }
-    .pullquote { font-size: 22px; }
-  }
-  @media (max-width: 580px) {
-    .container { padding: 0 20px; }
-    .beliefs { padding: 64px 20px; }
-    .story-prose p { font-size: 16px; }
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--terracotta);
-    outline-offset: 4px;
-    border-radius: 4px;
-  }
-</style>
+<link rel="stylesheet" href="/assets/styles/base.css">
+<link rel="stylesheet" href="/assets/styles/about.css">
 </head>
 <body>
 
 <!-- ============= NAV ============= -->
 <div class="container wide">
-  <nav>
+  <nav class="page-nav">
     <a href="/" class="logo-lockup" aria-label="Bryndeli home">
       <svg viewBox="0 0 200 200" aria-hidden="true">
         <circle cx="100" cy="100" r="76" fill="none" stroke="#2F5D4E" stroke-width="11" stroke-linecap="round" stroke-dasharray="310 138" transform="rotate(-32 100 100)"/>
@@ -529,111 +43,69 @@
   </nav>
 </div>
 
-<!-- ============= HEADER ============= -->
+<!-- ============= HERO ============= -->
 <div class="container">
   <header class="page-head">
     <div class="eyebrow">About Bryndeli</div>
-    <h1>A small company in Telford, building the tool <em>frontline carers should already have.</em></h1>
-    <p class="subhead">
-      Bryndeli started where most software doesn't — with the people who do the visits, not the people who buy the software.
+    <h1>We build for the moments <em>care actually happens.</em></h1>
+    <p class="lede">
+      Bryndeli is the AI companion every frontline carer should have. This is what we believe and why those beliefs shape every decision we make.
     </p>
   </header>
 </div>
 
-<!-- ============= STORY ============= -->
-<section class="story">
-  <div class="container">
-    <div class="story-meta">
-
-      <!-- Author card -->
-      <aside class="author-card">
-        <div class="author-photo">
-          <!-- The Nest mark as placeholder until a real photo is added -->
-          <svg class="placeholder-mark" viewBox="0 0 200 200" aria-hidden="true">
-            <circle cx="100" cy="100" r="76" fill="none" stroke="#2F5D4E" stroke-width="11" stroke-linecap="round" stroke-dasharray="310 138" transform="rotate(-32 100 100)"/>
-            <circle cx="100" cy="100" r="48" fill="none" stroke="#2F5D4E" stroke-width="9" stroke-linecap="round" stroke-dasharray="206 88" transform="rotate(64 100 100)"/>
-            <circle cx="100" cy="100" r="17" fill="#C9614A"/>
-          </svg>
-        </div>
-        <div class="author-name">Olu Akinyemi</div>
-        <div class="author-role">Founder &amp; engineer</div>
-        <div class="author-links">
-          <a href="mailto:olu@bryndeli.co.uk">Email →</a>
-          <a href="https://www.linkedin.com/in/olumuyiwa-akinyemi" target="_blank" rel="noopener">LinkedIn →</a>
-        </div>
-      </aside>
-
-      <!-- Story prose -->
-      <article class="story-prose">
-
-        <!-- ============= EDIT THIS BLOCK WITH YOUR REAL STORY ============= -->
-        <p>
-          I'm Olu, and I'm building Bryndeli from a small office in Telford. I've spent most of my career as a software engineer — building products in fintech, energy, and most recently in healthcare. The thing that surprised me, working alongside care providers, is how much of the software in this sector is built for the wrong audience.
-        </p>
-
-        <p>
-          Care management systems are designed for inspectors, regulators, and finance teams. They produce documents that look good in audits and reports that satisfy commissioners. What they don't do is help the carer who's standing at someone's front door at 7am, trying to remember whether Margaret takes her insulin <em>before</em> breakfast or after.
-        </p>
-
-        <p>
-          That gap — between the software that exists and the software a frontline carer would actually use — is where Bryndeli lives. We read the care plans, handovers, and notes you already have, and turn them into something useful in the moment. Voice prompts you can ask in the car park. Briefs that adjust to the time of day. Cards that surface only what matters now.
-        </p>
-
-        <div class="pullquote">
-          The software your team uses should be <em>worthy</em> of the work they do. Most of it isn't. We're trying to change that.
-        </div>
-
-        <p>
-          Bryndeli is small on purpose. I'd rather build something a hundred care providers love than something a thousand are forced to use. The companies in healthcare that I admire — Florence, Lottie, Cera — got there by spending more time in care homes than in pitch meetings. That's the path I'm trying to walk.
-        </p>
-
-        <p>
-          If you run a domiciliary, residential, or supported living service in the UK and you've ever wondered why the software you pay for makes the round harder rather than easier, I'd love to talk to you. There's no slide deck and no sales process — just a 15-minute call where I show you what we're building and you tell me whether it would help.
-        </p>
-
-        <p>
-          <strong>You can reach me directly at <a href="mailto:olu@bryndeli.co.uk" style="color: var(--pine); text-decoration: underline; text-underline-offset: 4px;">olu@bryndeli.co.uk</a>.</strong> I read every email.
-        </p>
-        <!-- ============= END OF EDITABLE STORY BLOCK ============= -->
-
-      </article>
-
-    </div>
-  </div>
-</section>
+<!-- ============= COMPANY PROSE ============= -->
+<div class="container">
+  <section class="company-prose">
+    <p>
+      Care is one of the most demanding professions in the country, performed largely without the tools the people doing it deserve. The software that exists tends to be built for the office and the back-end of the system — not the doorstep, the kettle, or the eight minutes between visits.
+    </p>
+    <p>
+      Bryndeli exists to close that gap. We read the care plans, handovers, and notes a team already has, and turn them into something a carer can actually use in the moment — voice-first, visit-tailored, time-aware. <strong>The work is the same; the support around it is finally worthy of it.</strong>
+    </p>
+  </section>
+</div>
 
 <!-- ============= BELIEFS ============= -->
 <section class="beliefs">
   <div class="beliefs-inner">
     <div class="eyebrow">What we believe</div>
-    <h2>Three things that <em>shape every decision</em> we make.</h2>
+    <h2>Four things that <em>shape every decision</em> we make.</h2>
     <p class="beliefs-lead">
-      Building software for frontline care means making choices about whose needs come first. Here's how we think about it.
+      These are not slogans. They're the principles a feature has to pass before we ship it, and the questions we ask whenever we don't know what to do next.
     </p>
 
     <div class="belief-grid">
 
       <div class="belief">
         <div class="belief-num">i.</div>
-        <h3>The carer is the customer.</h3>
+        <h3>Care is delivered in moments, not documents.</h3>
         <p>
-          Managers and owners sign the contracts, but if the software doesn't make a frontline carer's day better, it's failed. Every feature passes one test: would a carer use this on minute three of an eight-minute call?
+          The work happens at someone's doorstep, in their living room, in eight minutes between visits. Anything that helps a carer in those moments matters. Anything that doesn't is paperwork.
         </p>
       </div>
 
       <div class="belief">
         <div class="belief-num">ii.</div>
-        <h3>AI should serve, not replace.</h3>
+        <h3>What one carer learns, the next should already know.</h3>
         <p>
-          We're building an AI companion, not a decision-maker. Bryndeli surfaces, summarises, and suggests — but the carer remains the qualified professional in the room. Always.
+          A regular carer accumulates knowledge about a service user that's invaluable: the green mug, the 3pm change in mood, the family member who calls on Tuesdays. None of that should disappear when a different carer arrives for the next visit.
         </p>
       </div>
 
       <div class="belief">
         <div class="belief-num">iii.</div>
-        <h3>Trust is built quietly.</h3>
+        <h3>Continuity of care is a craft, not an admin task.</h3>
         <p>
-          We host UK data in the UK. We don't train models on customer data without consent. We work toward NHS DSPT and CQC alignment because care providers need that, not because it makes a good slide.
+          Handovers, briefings, shift-end notes — these aren't bureaucratic chores. They're how good care happens across multiple carers, days, and weeks. Software should treat them with the seriousness the work demands.
+        </p>
+      </div>
+
+      <div class="belief">
+        <div class="belief-num">iv.</div>
+        <h3>The right answer late is the wrong answer.</h3>
+        <p>
+          A carer standing at a front door at 7am can't wait for a callback, an email, or a thirty-page PDF. Information is only useful when it arrives in time to change something. Speed isn't a luxury here — it's the whole point.
         </p>
       </div>
 
@@ -646,37 +118,59 @@
   <div class="container">
     <div class="telford-grid">
       <div>
-        <h2>Why <em>Telford?</em></h2>
+        <h2>Built quietly, in <em>Telford.</em></h2>
         <p>
-          Most UK tech companies cluster in London, Manchester, or Cambridge. We're in Telford — a town better known for its iron bridge than its software industry, sitting between the West Midlands and the Welsh borders.
+          Most UK tech companies cluster in London, Manchester, or Cambridge. Bryndeli is built from a small office in Telford — a town better known for its iron bridge than its software industry, sitting between the West Midlands and the Welsh borders.
         </p>
         <p>
-          That's deliberate. The care providers who'll use Bryndeli aren't in London either. They're in towns like ours: Stoke, Wolverhampton, Shrewsbury, the Black Country, the Marches. Building from here keeps us close to the people we're building for, and far from the assumptions that come with London tech.
+          There's no grand strategic story behind that. It's where the founder lives. It's quieter. It's the kind of place where you can spend a morning thinking carefully about a problem instead of rushing to the next meeting. We think care software is better for being built in a place that isn't trying to be anywhere else.
         </p>
         <p>
-          "Made in Telford" isn't decorative. It's an honest statement about who we are and who this is for.
+          "Made in Telford" isn't decoration. It's where the work happens.
         </p>
       </div>
 
       <div class="telford-stamp">
         <div class="stamp-circle">
-          <div class="stamp-text">
-            Made<br>in<br>Telford
-          </div>
+          <div class="stamp-text">Made<br>in<br>Telford</div>
         </div>
-        <div class="telford-coords">
-          52.6766° N · 2.4469° W
-        </div>
+        <div class="telford-coords">52.6766° N · 2.4469° W</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============= CTA STRIP ============= -->
+<!-- ============= FOUNDER NOTE ============= -->
+<section class="founder-note">
+  <div class="container">
+    <div class="founder-grid">
+      <div class="founder-photo">
+        <svg class="placeholder-mark" viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="76" fill="none" stroke="#2F5D4E" stroke-width="11" stroke-linecap="round" stroke-dasharray="310 138" transform="rotate(-32 100 100)"/>
+          <circle cx="100" cy="100" r="48" fill="none" stroke="#2F5D4E" stroke-width="9" stroke-linecap="round" stroke-dasharray="206 88" transform="rotate(64 100 100)"/>
+          <circle cx="100" cy="100" r="17" fill="#C9614A"/>
+        </svg>
+      </div>
+
+      <div class="founder-prose">
+        <div class="founder-eyebrow">A note from the founder</div>
+        <h2>Bryndeli started where most software doesn't — close to the work.</h2>
+        <p>
+          I'm Olu Akinyemi. I've spent most of my career as a software engineer, but a stretch of time supporting service users alongside frontline carers changed how I thought about this sector. The thing that stayed with me wasn't any single moment — it was the cumulative observation that the people doing the most demanding work were the ones with the least information at the moments it mattered most. Care plans existed. Handovers happened. The knowledge was there. <em>It just wasn't reaching the right person at the right time.</em>
+        </p>
+        <p>
+          If you run a domiciliary, residential, or supported living service in the UK, I'd love to hear from you. No slide deck, no sales pitch — just a 15-minute conversation about whether this would help your team. <a href="mailto:olu@bryndeli.co.uk">olu@bryndeli.co.uk</a>. I read every email.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= CTA ============= -->
 <section class="cta-strip">
   <div class="container">
-    <h2>Want to talk to <em>the person</em> building Bryndeli?</h2>
-    <p>I read every email. No pitch decks, no sales pressure — just a 15-minute conversation about whether this would help your team.</p>
+    <h2>Want to see Bryndeli <em>in practice?</em></h2>
+    <p>The fastest way to understand what we're building is to see it. Email Olu directly, or take the tour from the homepage.</p>
     <div class="cta-buttons">
       <a href="mailto:olu@bryndeli.co.uk" class="btn">Email Olu →</a>
       <a href="/#how" class="btn btn-outline">See how it works</a>
