@@ -97,6 +97,31 @@ h1 {
   color: var(--rule-strong);
 }
 
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 7px 14px 7px 12px;
+  background: rgba(201, 97, 74, 0.08);
+  border: 1px solid rgba(201, 97, 74, 0.28);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--terracotta-deep);
+  font-weight: 500;
+}
+.status-pill .status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(201, 97, 74, 0.18);
+}
+
 
 /* ============= CONTENT ============= */
 main { padding-bottom: 88px; }
