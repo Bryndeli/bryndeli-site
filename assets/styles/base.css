@@ -142,6 +142,11 @@ nav.scrolled {
   transition: color 0.18s;
 }
 .nav-links a:hover { color: var(--pine); }
+.nav-links a[aria-current="page"] {
+  color: var(--pine);
+  font-weight: 600;
+}
+.mobile-menu a[aria-current="page"] { color: var(--terracotta); }
 
 /* Back-link variant used on inner pages (about, legal) */
 .nav-back {

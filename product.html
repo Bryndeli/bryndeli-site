@@ -34,17 +34,36 @@
 <div class="container">
 
   <!-- ============= NAV ============= -->
-  <nav>
+  <nav id="nav">
     <a href="/" class="logo-lockup" aria-label="Bryndeli home">
-      <svg viewBox="0 0 200 200" aria-hidden="true">
+      <svg class="symbol" viewBox="0 0 200 200" aria-hidden="true">
         <circle cx="100" cy="100" r="76" fill="none" stroke="#2F5D4E" stroke-width="11" stroke-linecap="round" stroke-dasharray="310 138" transform="rotate(-32 100 100)"/>
         <circle cx="100" cy="100" r="48" fill="none" stroke="#2F5D4E" stroke-width="9" stroke-linecap="round" stroke-dasharray="206 88" transform="rotate(64 100 100)"/>
         <circle cx="100" cy="100" r="17" fill="#C9614A"/>
       </svg>
       <span class="word">bryndeli</span>
     </a>
-    <a href="/" class="nav-back">← Back to home</a>
+    <ul class="nav-links">
+      <li><a href="/#how">How it works</a></li>
+      <li><a href="/#day">Stories</a></li>
+      <li><a href="/product.html" aria-current="page">Product</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="#demo" class="btn btn-outline">Book a demo</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+      <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="toggle-label">Menu</span>
+    </button>
   </nav>
+
+  <!-- ============= MOBILE MENU ============= -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="/#how" data-mobile-nav>How it works</a>
+    <a href="/#day" data-mobile-nav>Stories</a>
+    <a href="/product.html" data-mobile-nav aria-current="page">Product</a>
+    <a href="/about.html" data-mobile-nav>About</a>
+    <a href="#demo" class="mobile-cta" data-mobile-nav>Book a 15-min demo →</a>
+  </div>
 
   <!-- ============= PAGE HEAD ============= -->
   <header class="page-head">
@@ -138,12 +157,43 @@
 
 <script>
   // Sticky nav background on scroll
-  const nav = document.querySelector('nav');
+  const nav = document.getElementById('nav');
   const onScroll = () => {
     if (window.scrollY > 24) nav.classList.add('scrolled');
     else nav.classList.remove('scrolled');
   };
   window.addEventListener('scroll', onScroll, { passive: true });
+
+  // ============= MOBILE MENU TOGGLE =============
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const body = document.body;
+
+  const setMenu = (open) => {
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    mobileMenu.classList.toggle('open', open);
+    mobileMenu.setAttribute('aria-hidden', String(!open));
+    body.classList.toggle('menu-open', open);
+  };
+
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      setMenu(!isOpen);
+    });
+
+    mobileMenu.querySelectorAll('[data-mobile-nav]').forEach(link => {
+      link.addEventListener('click', () => setMenu(false));
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
+        setMenu(false);
+        navToggle.focus();
+      }
+    });
+  }
 
   // Reveal-on-scroll
   const reveals = document.querySelectorAll('.reveal');
