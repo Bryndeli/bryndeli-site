@@ -7,21 +7,56 @@
 /* Narrower reading column for legal documents. */
 .container { max-width: 760px; }
 
-/* ============= DRAFT BANNER ============= */
-.draft-banner {
-  background: var(--terracotta);
-  color: var(--oat);
-  padding: 14px 32px;
-  text-align: center;
+/* ============= LEGAL CROSS-NAV (Privacy ↔ Terms) ============= */
+.legal-cross-nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 24px 0 40px;
+  padding: 16px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.legal-cross-nav .group-label {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pine);
+  margin-right: 8px;
+  opacity: 0.7;
+  font-weight: 500;
+}
+.legal-cross-nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 10.5px;
   letter-spacing: 0.10em;
   text-transform: uppercase;
-  font-weight: 500;
-  margin: 0 -32px 48px;
-  border-radius: 8px;
+  color: var(--bark-soft);
+  text-decoration: none;
+  border: 1px solid var(--rule);
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s var(--ease);
 }
-.draft-banner strong { font-weight: 600; }
+.legal-cross-nav a:hover {
+  color: var(--pine);
+  border-color: var(--rule-strong);
+  transform: translateY(-1px);
+}
+.legal-cross-nav a.active {
+  background: var(--pine);
+  color: var(--oat);
+  border-color: var(--pine);
+}
+.legal-cross-nav a.active:hover {
+  background: var(--pine-deep);
+  border-color: var(--pine-deep);
+  color: var(--oat);
+}
 
 
 /* ============= HEADER ============= */
@@ -60,6 +95,31 @@ h1 {
   content: ' · ';
   margin: 0 4px;
   color: var(--rule-strong);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 7px 14px 7px 12px;
+  background: rgba(201, 97, 74, 0.08);
+  border: 1px solid rgba(201, 97, 74, 0.28);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--terracotta-deep);
+  font-weight: 500;
+}
+.status-pill .status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(201, 97, 74, 0.18);
 }
 
 
