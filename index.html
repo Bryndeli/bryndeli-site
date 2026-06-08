@@ -1,628 +1,1130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Bryndeli — The AI companion every frontline carer should have.</title>
-<meta name="description" content="Bryndeli reads the care plans, handovers, and notes you already have — and gives your team the right answer at the right moment. Built for UK frontline carers.">
-<meta name="theme-color" content="#F8EDE0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>
+      Bryndeli — The AI companion every frontline carer should have.
+    </title>
+    <meta
+      name="description"
+      content="Bryndeli reads the care plans, handovers, and notes you already have — and gives your team the right answer at the right moment. Built for UK frontline carers."
+    />
+    <meta name="theme-color" content="#F8EDE0" />
 
-<!-- Open Graph -->
-<meta property="og:title" content="Bryndeli — The AI companion every frontline carer should have.">
-<meta property="og:description" content="Frontline care intelligence, built for the round — not the boardroom.">
-<meta property="og:image" content="/assets/images/og-image.png">
-<meta property="og:url" content="https://bryndeli.co.uk">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="/assets/images/og-image.png">
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Bryndeli — The AI companion every frontline carer should have."
+    />
+    <meta
+      property="og:description"
+      content="Frontline care intelligence, built for the round — not the boardroom."
+    />
+    <meta property="og:image" content="/assets/images/og-image.png" />
+    <meta property="og:url" content="https://bryndeli.co.uk" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/assets/images/og-image.png" />
 
-<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
-<link rel="apple-touch-icon" href="/assets/images/app-icon-180.png">
-<link rel="manifest" href="/manifest.webmanifest">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+    <link rel="apple-touch-icon" href="/assets/images/app-icon-180.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="stylesheet" href="/assets/styles/base.css">
-<link rel="stylesheet" href="/assets/styles/home.css">
-</head>
-<body>
-
-<div class="container">
-
-  <!-- ============= NAV ============= -->
-  <nav id="nav">
-    <a href="/" class="logo-lockup" aria-label="Bryndeli home">
-      <svg class="symbol" viewBox="0 0 200 200" aria-hidden="true">
-        <circle cx="100" cy="100" r="76" fill="none" stroke="#2F5D4E" stroke-width="11" stroke-linecap="round" stroke-dasharray="310 138" transform="rotate(-32 100 100)"/>
-        <circle cx="100" cy="100" r="48" fill="none" stroke="#2F5D4E" stroke-width="9" stroke-linecap="round" stroke-dasharray="206 88" transform="rotate(64 100 100)"/>
-        <circle cx="100" cy="100" r="17" fill="#C9614A"/>
-      </svg>
-      <span class="word">bryndeli</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#how">How it works</a></li>
-      <li><a href="#day">Stories</a></li>
-      <li><a href="/product.html">Product</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="#demo" class="btn btn-outline">Book a demo</a></li>
-    </ul>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
-      <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
-      <span class="toggle-label">Menu</span>
-    </button>
-  </nav>
-
-  <!-- ============= MOBILE MENU ============= -->
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <a href="#how" data-mobile-nav>How it works</a>
-    <a href="#day" data-mobile-nav>Stories</a>
-    <a href="/product.html" data-mobile-nav>Product</a>
-    <a href="#answers" data-mobile-nav>Examples</a>
-    <a href="#faq" data-mobile-nav>FAQ</a>
-    <a href="/about.html" data-mobile-nav>About</a>
-    <a href="#demo" class="mobile-cta" data-mobile-nav>Book a 15-min demo →</a>
-  </div>
-
-  <!-- ============= HERO ============= -->
-  <section class="hero">
-    <div class="hero-ring-bg r1"></div>
-    <div class="hero-ring-bg r2"></div>
-    <div class="hero-ring-bg r3"></div>
-
-    <div class="hero-grid">
-      <div>
-        <div class="hero-eyebrow">For UK frontline carers · Domiciliary, residential, supported living</div>
-        <h1>The AI companion every frontline carer <em>should have.</em></h1>
-        <p class="hero-sub">
-          Bryndeli reads the care plans, handovers, and notes you already have — and puts the right answer in your team's hand at the moment they need it.
-        </p>
-        <div class="hero-cta">
-          <a href="#demo" class="btn btn-large">Book a 15-min demo <span class="arr">→</span></a>
-          <a href="#how" class="btn btn-outline btn-large">See how it works</a>
-          <a href="#answers" class="hero-tour-link">Watch the 60-second tour <span aria-hidden="true">→</span></a>
-        </div>
-        <div class="trust-row">
-          <a class="trust-item" href="/security.html#cqc">
-            <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="#2F5D4E" stroke-width="1.4"/><path d="M4.5 7L6 8.5L9.5 5" stroke="#2F5D4E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            CQC-aligned
-          </a>
-          <a class="trust-item" href="/security.html#dspt">
-            <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="#2F5D4E" stroke-width="1.4"/><path d="M4.5 7L6 8.5L9.5 5" stroke="#2F5D4E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            NHS DSPT-ready
-          </a>
-          <a class="trust-item" href="/security.html#hosting">
-            <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="#2F5D4E" stroke-width="1.4"/><path d="M4.5 7L6 8.5L9.5 5" stroke="#2F5D4E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            UK data hosted
-          </a>
-          <a class="trust-item" href="/security.html#ico">
-            <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="#2F5D4E" stroke-width="1.4"/><path d="M4.5 7L6 8.5L9.5 5" stroke="#2F5D4E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            ICO registered
-          </a>
-        </div>
-        <a class="hero-security-link" href="/security.html">Read our security posture <span aria-hidden="true">→</span></a>
-        <div class="hero-attribution">By Olu Akinyemi · Made in Telford · Built for the round, not the boardroom</div>
-      </div>
-
-      <!-- Phone + paper composition -->
-      <div class="phone-stage">
-        <!-- Care plan paper behind phone -->
-        <div class="paper-behind" aria-hidden="true">
-          <div class="paper-stamp">CARE<br>PLAN<br>v.04</div>
-          <h4>Margaret Holbrook</h4>
-          <div class="paper-meta">REF · 04827 / DOM</div>
-          <div class="paper-line full"></div>
-          <div class="paper-line med"></div>
-          <div class="paper-line full"></div>
-          <div class="paper-line short"></div>
-          <div class="paper-line full"></div>
-          <div class="paper-line med"></div>
-          <div class="paper-line full"></div>
-          <div class="paper-line short"></div>
-          <div class="paper-line full"></div>
-          <div class="paper-line med"></div>
-          <div class="paper-line full"></div>
-          <div class="paper-line short"></div>
-        </div>
-
-        <!-- Phone -->
-        <div class="phone">
-          <div class="phone-screen">
-            <div class="phone-notch"></div>
-            <div class="phone-status">
-              <span>9:42</span>
-              <span style="display: flex; gap: 5px; align-items: center;">
-                <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 9L7 1L13 9" stroke="#2A2520" stroke-width="1.5" stroke-linecap="round"/></svg>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="4" width="12" height="6" rx="1" stroke="#2A2520" stroke-width="1.5"/></svg>
-              </span>
-            </div>
-            <div class="phone-header">
-              <div>
-                <div class="phone-greeting">Good morning</div>
-                <div class="phone-name">Sarah</div>
-              </div>
-              <div class="avatar">SO</div>
-            </div>
-
-            <div class="demo-stage">
-              <!-- s0 — Visit list (the resting state) -->
-              <div class="demo-state s0">
-                <div class="ai-bar">
-                  <span class="dot"></span>
-                  <span>Ask anything about today's visits…</span>
-                </div>
-                <div class="visit-list">
-                  <div class="visit-section-label">In progress · 09:30 — 10:30</div>
-                  <div class="visit-card now">
-                    <div class="visit-time-row">
-                      <span class="visit-time">09:30 · 1 HR VISIT</span>
-                      <span class="visit-tag">Now</span>
-                    </div>
-                    <div class="visit-name">Margaret Holbrook</div>
-                    <div class="visit-meta">Type 2 diabetes · Mobility limited<br>Front door key in lockbox</div>
-                    <div class="visit-prep">
-                      Insulin before breakfast. Mug must be the green one — anything else upsets her.
-                    </div>
-                  </div>
-
-                  <div class="visit-section-label">Next up · 11:00</div>
-                  <div class="visit-card">
-                    <div class="visit-time-row">
-                      <span class="visit-time">11:00 · 30 MIN</span>
-                      <span class="visit-tag scheduled">Scheduled</span>
-                    </div>
-                    <div class="visit-name">Arthur Pemberton</div>
-                    <div class="visit-meta">PEG feed · Catheter care<br>Wife Eileen usually present</div>
-                  </div>
-
-                  <div class="visit-section-label">Later today · 14:15</div>
-                  <div class="visit-card">
-                    <div class="visit-time-row">
-                      <span class="visit-time">14:15 · 45 MIN</span>
-                      <span class="visit-tag scheduled">Scheduled</span>
-                    </div>
-                    <div class="visit-name">Ivy Whitfield</div>
-                    <div class="visit-meta">Dementia · Sundowning after 3pm<br>Avoid mentioning her late husband</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- s1 — Ask (typewriter) -->
-              <div class="demo-state s1" aria-hidden="true">
-                <div class="ai-bar active">
-                  <span class="dot"></span>
-                  <span class="typewriter">What does Margaret need this morning?</span>
-                </div>
-                <div class="visit-list dim">
-                  <div class="visit-section-label">In progress · 09:30 — 10:30</div>
-                  <div class="visit-card now">
-                    <div class="visit-time-row">
-                      <span class="visit-time">09:30 · 1 HR VISIT</span>
-                      <span class="visit-tag">Now</span>
-                    </div>
-                    <div class="visit-name">Margaret Holbrook</div>
-                    <div class="visit-meta">Type 2 diabetes · Mobility limited</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- s2 — Thinking + sources -->
-              <div class="demo-state s2" aria-hidden="true">
-                <div class="ai-bar active">
-                  <span class="dot"></span>
-                  <span class="ai-bar-text">What does Margaret need this morning?</span>
-                </div>
-                <div class="thinking-block">
-                  <div class="thinking-row">
-                    <span class="think-dots"><i></i><i></i><i></i></span>
-                    <span>Reading care plan <em>v.04</em>…</span>
-                  </div>
-                  <div class="source-pills">
-                    <span class="source-pill p1">
-                      <svg viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><path d="M2.5 1h5l2.5 2.5V11H2.5V1z" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/><path d="M7 1v3h3" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>
-                      Care plan · Margaret Holbrook
-                    </span>
-                    <span class="source-pill p2">
-                      <svg viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><path d="M2.5 1h5l2.5 2.5V11H2.5V1z" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/><path d="M7 1v3h3" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>
-                      Yesterday's handover
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- s3 — Answer card -->
-              <div class="demo-state s3" aria-hidden="true">
-                <div class="ai-bar active">
-                  <span class="dot"></span>
-                  <span class="ai-bar-text">What does Margaret need this morning?</span>
-                </div>
-                <div class="answer-card">
-                  <div class="answer-title">Here's what Margaret needs:</div>
-                  <ul class="answer-bullets">
-                    <li>
-                      <svg viewBox="0 0 14 14" width="13" height="13" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M4.5 7L6 8.5L9.5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                      <span><strong>Insulin before breakfast</strong> — not after.</span>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 14 14" width="13" height="13" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M4.5 7L6 8.5L9.5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                      <span>The <strong>green mug</strong> only — others upset her.</span>
-                    </li>
-                    <li>
-                      <svg viewBox="0 0 14 14" width="13" height="13" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M4.5 7L6 8.5L9.5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                      <span>Bath chair adjusted — flagged on yesterday's call.</span>
-                    </li>
-                  </ul>
-                  <div class="answer-grounding">
-                    Grounded in: Margaret Holbrook · care plan v.04
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============= SARAH'S DAY ============= -->
-  <section class="day" id="day">
-    <div class="container" style="padding: 0;">
-      <div class="reveal"><div class="section-eyebrow">A day on the round</div></div>
-      <h2 class="reveal delay-1">Same carer. Same town. <em>Better visits.</em></h2>
-      <p class="lead reveal delay-2">Here's what Bryndeli changes for Sarah, a senior carer in the West Midlands. Three visits, one shift, three different moments where the right information arrives just in time.</p>
-
-      <div class="day-grid">
-        <div class="day-card reveal delay-1">
-          <div class="day-time">
-            <span>Morning</span>
-            <span class="time-num">09:30</span>
-          </div>
-          <h3>Walks in already knowing.</h3>
-          <p>Margaret's insulin needs to come before breakfast — not after. The mug must be green. Today she needs her bath chair adjusted from yesterday's call. Sarah knows all this before she knocks.</p>
-          <p class="day-quote">"I used to walk in and ask. Now I walk in and know."</p>
-        </div>
-        <div class="day-card reveal delay-2">
-          <div class="day-time">
-            <span>Midday</span>
-            <span class="time-num">12:45</span>
-          </div>
-          <h3>Asks instead of ringing.</h3>
-          <p>Arthur's wife mentions a new medication. Instead of calling the office, Sarah asks Bryndeli — which checks the latest GP letter and confirms it's compatible with his existing meds. Office stays unbothered.</p>
-          <p class="day-quote">"My manager used to take twenty calls a shift. Now she takes two."</p>
-        </div>
-        <div class="day-card reveal delay-3">
-          <div class="day-time">
-            <span>Afternoon</span>
-            <span class="time-num">14:15</span>
-          </div>
-          <h3>Spots what others missed.</h3>
-          <p>Ivy seems quieter than usual. Bryndeli surfaces that two carers earlier in the week noted "withdrawn after lunch." Sarah flags it. The next visit is moved earlier — before sundowning hits.</p>
-          <p class="day-quote">"The whole team is in your pocket. Even the ones not on shift."</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============= HOW IT WORKS ============= -->
-  <section class="how" id="how">
-    <div class="container" style="padding: 0;">
-      <div class="reveal"><div class="section-eyebrow">How it works</div></div>
-      <h2 class="reveal delay-1">Drop in your existing care plans. <em>The AI does the rest.</em></h2>
-      <p class="lead reveal delay-2">No replacement system. No mass retraining. Bryndeli reads what you already have and makes it speak the language of the round.</p>
-
-      <div class="steps">
-        <div class="step reveal delay-1">
-          <div class="step-num">i.</div>
-          <h3>Connect or upload</h3>
-          <p>Pull from Birdie, PASS, or any care management system. Or upload existing PDFs and Word docs. We handle the rest — no clean-up required.</p>
-        </div>
-        <div class="step reveal delay-2">
-          <div class="step-num">ii.</div>
-          <h3>The AI reads everything</h3>
-          <p>Our model — trained on real UK care plans — extracts the moments that matter: medication timings, mobility risks, behavioural triggers, family preferences.</p>
-        </div>
-        <div class="step reveal delay-3">
-          <div class="step-num">iii.</div>
-          <h3>Carers ask, in plain English</h3>
-          <p>"What does Margaret need this morning?" Bryndeli answers in seconds — visit-tailored, time-aware, and grounded in the actual plan. No hallucinations.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============= INTEGRATIONS STRIP ============= -->
-  <section class="integrations">
-    <div class="reveal"><div class="section-eyebrow">Connects to what you already use</div></div>
-    <p class="integrations-lead reveal delay-1">Pulls directly from your existing system. No clean-up required.</p>
-    <div class="integration-grid reveal delay-2">
-      <span class="integration-pill">
-        <span class="dot soon"></span>
-        <span class="name">BIRDIE</span>
-      </span>
-      <span class="integration-pill">
-        <span class="dot soon"></span>
-        <span class="name">PASS</span>
-      </span>
-      <span class="integration-pill">
-        <span class="dot soon"></span>
-        <span class="name">PERSON CENTRED SOFTWARE</span>
-      </span>
-      <span class="integration-pill">
-        <span class="dot soon"></span>
-        <span class="name">LOG MY CARE</span>
-      </span>
-      <span class="integration-pill">
-        <span class="dot soon"></span>
-        <span class="name">NOURISH</span>
-      </span>
-      <span class="integration-pill">
-        <span class="dot live"></span>
-        <span class="name">PDF / WORD UPLOAD</span>
-      </span>
-    </div>
-    <div class="integration-key reveal delay-3">
-      <span><span class="key-dot live"></span> Available now</span>
-      <span><span class="key-dot soon"></span> Coming soon</span>
-    </div>
-  </section>
-
-  <!-- ============= WHAT BRYNDELI ANSWERS ============= -->
-  <section id="answers" class="answers">
-    <div class="reveal"><div class="section-eyebrow">Concrete examples</div></div>
-    <h2 class="reveal delay-1">Real questions. <em>Real answers.</em> Grounded in the plan.</h2>
-    <p class="lead reveal delay-2">A snapshot of what carers actually ask, and what Bryndeli actually returns. Every answer is sourced from the customer's own care plans, handovers, and team notes — and it tells you exactly where it came from.</p>
-
-    <div class="answers-grid">
-      <!-- Pair 1 — Morning brief -->
-      <div class="answer-pair reveal delay-1">
-        <div class="q-bubble">
-          <span class="q-label">CARER ASKS</span>
-          <p>"What does Margaret need this morning?"</p>
-        </div>
-        <div class="a-card">
-          <span class="a-label">Bryndeli</span>
-          <ul>
-            <li><strong>Insulin before breakfast</strong> — not after.</li>
-            <li>The <strong>green mug</strong> only — others upset her.</li>
-            <li>Bath chair adjusted from yesterday's call.</li>
-          </ul>
-          <div class="a-sources">
-            <span class="src-pill">Care plan v.04 · § Morning routine</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pair 2 — Family question -->
-      <div class="answer-pair reveal delay-2">
-        <div class="q-bubble">
-          <span class="q-label">CARER ASKS</span>
-          <p>"Arthur's wife mentioned a new med. Is it OK with what he's already on?"</p>
-        </div>
-        <div class="a-card">
-          <span class="a-label">Bryndeli</span>
-          <p class="a-prose">Yes — fully compatible with his current medications. Worth flagging at the next handover so the team has it on record.</p>
-          <div class="a-sources">
-            <span class="src-pill">GP letter · 14 Apr</span>
-            <span class="src-pill">Care plan v.04 · § Allergies</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pair 3 — Behavioural pattern -->
-      <div class="answer-pair reveal delay-1">
-        <div class="q-bubble">
-          <span class="q-label">CARER ASKS</span>
-          <p>"Has Ivy been quieter than usual lately?"</p>
-        </div>
-        <div class="a-card">
-          <span class="a-label">Bryndeli</span>
-          <p class="a-prose">Two carers in the last 3 days noted "withdrawn after lunch." Suggest moving today's 14:15 visit earlier, before sundowning hits.</p>
-          <div class="a-sources">
-            <span class="src-pill">Team handover · last 7 days</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pair 4 — Cover shift -->
-      <div class="answer-pair reveal delay-2">
-        <div class="q-bubble">
-          <span class="q-label">COVER CARER ASKS</span>
-          <p>"I've never visited Margaret. What should I know in 30 seconds?"</p>
-        </div>
-        <div class="a-card">
-          <span class="a-label">Bryndeli</span>
-          <ul>
-            <li>Type 2 diabetes — insulin <strong>before</strong> breakfast.</li>
-            <li>Mobility limited — bath chair, no stairs.</li>
-            <li>Front door key in the lockbox to the right of the porch.</li>
-            <li>Green mug only. It matters.</li>
-          </ul>
-          <div class="a-sources">
-            <span class="src-pill">Care plan v.04</span>
-            <span class="src-pill">Last 14 days of visit notes</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============= FAQ ============= -->
-  <section class="faq" id="faq">
-    <div class="reveal"><div class="section-eyebrow">Common questions</div></div>
-    <h2 class="reveal delay-1">What care managers <em>ask</em> before they say yes.</h2>
-
-    <div class="faq-list reveal delay-2">
-      <details class="faq-item">
-        <summary>
-          <span>Does Bryndeli replace our care management system?</span>
-          <svg class="faq-icon" viewBox="0 0 14 14" width="16" height="16" aria-hidden="true"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        </summary>
-        <div class="faq-body">
-          <p>No. Bryndeli sits alongside Birdie, PASS, Person Centred Software, Log my Care, and others — reading your existing care plans, handovers, and notes. Your team keeps the systems they know. Bryndeli adds the layer that makes them speak the language of the round.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <span>What happens if a carer asks something the care plan doesn't cover?</span>
-          <svg class="faq-icon" viewBox="0 0 14 14" width="16" height="16" aria-hidden="true"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        </summary>
-        <div class="faq-body">
-          <p>Bryndeli says so explicitly. It will surface the closest related information from the plan or recent handovers — and tell the carer where to look or who to call. We deliberately built it to refuse to fill gaps it can't ground in source material. No hallucinations.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <span>Where is our data stored, and who can see it?</span>
-          <svg class="faq-icon" viewBox="0 0 14 14" width="16" height="16" aria-hidden="true"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        </summary>
-        <div class="faq-body">
-          <p>UK-only data residency, encryption at rest and in transit, and access scoped to the people you authorise. We do not train AI models on your data. Full security posture, sub-processors, and DSPT/ICO status live on the <a class="link" href="/security.html">security page</a>.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <span>How long does setup take? Do we need to retrain our team?</span>
-          <svg class="faq-icon" viewBox="0 0 14 14" width="16" height="16" aria-hidden="true"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        </summary>
-        <div class="faq-body">
-          <p>Days, not months. We ingest your existing PDFs, exports, and care management connections — no clean-up required — and your team is trialling within a week. There's nothing for carers to learn beyond "ask it a question." That's the entire interface.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <span>How much does it cost?</span>
-          <svg class="faq-icon" viewBox="0 0 14 14" width="16" height="16" aria-hidden="true"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        </summary>
-        <div class="faq-body">
-          <p>Per-carer monthly seat, scaled to your team size. We tailor a quote on the demo call once we've understood your provider mix and the systems you're already running. <a class="link" href="mailto:hello@bryndeli.co.uk?subject=Pricing%20enquiry">Email us for a number</a> if a demo isn't convenient yet.</p>
-        </div>
-      </details>
-    </div>
-
-    <a class="faq-more reveal delay-3" href="/faq.html">More answers on the FAQ page <span aria-hidden="true">→</span></a>
-  </section>
-
-  <!-- ============= CTA ============= -->
-  <section class="cta" id="demo">
-    <h2 class="reveal">Give your team <em>their confidence back.</em></h2>
-    <p class="reveal delay-1">Book a 15-minute demo. We'll show you Bryndeli using care plans that look like yours — no slide deck, no sales pressure.</p>
-    <div class="reveal delay-2">
-      <a href="mailto:hello@bryndeli.co.uk" class="btn btn-large">Book your demo <span class="arr">→</span></a>
-    </div>
-  </section>
-
-  <!-- ============= FOOTER ============= -->
-  <footer>
-    <div class="footer-grid">
-      <div>
+    <link rel="stylesheet" href="/assets/styles/base.css" />
+    <link rel="stylesheet" href="/assets/styles/home.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- ============= NAV ============= -->
+      <nav id="nav">
         <a href="/" class="logo-lockup" aria-label="Bryndeli home">
           <svg class="symbol" viewBox="0 0 200 200" aria-hidden="true">
-            <circle cx="100" cy="100" r="76" fill="none" stroke="#2F5D4E" stroke-width="11" stroke-linecap="round" stroke-dasharray="310 138" transform="rotate(-32 100 100)"/>
-            <circle cx="100" cy="100" r="48" fill="none" stroke="#2F5D4E" stroke-width="9" stroke-linecap="round" stroke-dasharray="206 88" transform="rotate(64 100 100)"/>
-            <circle cx="100" cy="100" r="17" fill="#C9614A"/>
+            <circle
+              cx="100"
+              cy="100"
+              r="76"
+              fill="none"
+              stroke="#2F5D4E"
+              stroke-width="11"
+              stroke-linecap="round"
+              stroke-dasharray="310 138"
+              transform="rotate(-32 100 100)"
+            />
+            <circle
+              cx="100"
+              cy="100"
+              r="48"
+              fill="none"
+              stroke="#2F5D4E"
+              stroke-width="9"
+              stroke-linecap="round"
+              stroke-dasharray="206 88"
+              transform="rotate(64 100 100)"
+            />
+            <circle cx="100" cy="100" r="17" fill="#C9614A" />
           </svg>
           <span class="word">bryndeli</span>
         </a>
-        <p class="footer-tagline">
-          Quietly putting the right care plan, in the right hands, at the right moment.
-        </p>
-      </div>
-      <div class="footer-col">
-        <h5>Product</h5>
-        <ul>
-          <li><a href="/product.html">Overview</a></li>
+        <ul class="nav-links">
           <li><a href="#how">How it works</a></li>
-          <li><a href="#answers">Examples</a></li>
-          <li><a href="mailto:hello@bryndeli.co.uk?subject=Pricing%20enquiry">Talk to sales</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Company</h5>
-        <ul>
+          <li><a href="#day">Stories</a></li>
+          <li><a href="/product.html">Product</a></li>
           <li><a href="/about.html">About</a></li>
-          <li><a href="mailto:hello@bryndeli.co.uk">Contact</a></li>
-          <li><a href="mailto:hello@bryndeli.co.uk?subject=Compliance%20enquiry">Compliance</a></li>
+          <li><a href="#demo" class="btn btn-outline">Book a demo</a></li>
         </ul>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+          aria-label="Open menu"
+        >
+          <span class="bars" aria-hidden="true"
+            ><span></span><span></span><span></span
+          ></span>
+          <span class="toggle-label">Menu</span>
+        </button>
+      </nav>
+
+      <!-- ============= MOBILE MENU ============= -->
+      <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <a href="#how" data-mobile-nav>How it works</a>
+        <a href="#day" data-mobile-nav>Stories</a>
+        <a href="/product.html" data-mobile-nav>Product</a>
+        <a href="#answers" data-mobile-nav>Examples</a>
+        <a href="#faq" data-mobile-nav>FAQ</a>
+        <a href="/about.html" data-mobile-nav>About</a>
+        <a href="#demo" class="mobile-cta" data-mobile-nav
+          >Book a 15-min demo →</a
+        >
       </div>
-      <div class="footer-col">
-        <h5>Legal</h5>
-        <ul>
-          <li><a href="/legal/privacy.html">Privacy Policy</a></li>
-          <li><a href="/legal/terms.html">Terms of Service</a></li>
-        </ul>
-      </div>
+
+      <!-- ============= HERO ============= -->
+      <section class="hero">
+        <div class="hero-ring-bg r1"></div>
+        <div class="hero-ring-bg r2"></div>
+        <div class="hero-ring-bg r3"></div>
+
+        <div class="hero-grid">
+          <div>
+            <div class="hero-eyebrow">
+              For UK frontline carers · Domiciliary, residential, supported
+              living
+            </div>
+            <h1>
+              The AI companion every frontline carer <em>should have.</em>
+            </h1>
+            <p class="hero-sub">
+              Bryndeli reads the care plans, handovers, and notes you already
+              have — and puts the right answer in your team's hand at the moment
+              they need it.
+            </p>
+            <div class="hero-cta">
+              <a href="#demo" class="btn btn-large"
+                >Book a 15-min demo <span class="arr">→</span></a
+              >
+              <a href="#how" class="btn btn-outline btn-large"
+                >See how it works</a
+              >
+              <a href="#answers" class="hero-tour-link"
+                >Watch the 60-second tour <span aria-hidden="true">→</span></a
+              >
+            </div>
+            <div class="trust-row">
+              <a class="trust-item" href="/security.html#cqc">
+                <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <circle
+                    cx="7"
+                    cy="7"
+                    r="6"
+                    stroke="#2F5D4E"
+                    stroke-width="1.4"
+                  />
+                  <path
+                    d="M4.5 7L6 8.5L9.5 5"
+                    stroke="#2F5D4E"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                CQC-aligned
+              </a>
+              <a class="trust-item" href="/security.html#dspt">
+                <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <circle
+                    cx="7"
+                    cy="7"
+                    r="6"
+                    stroke="#2F5D4E"
+                    stroke-width="1.4"
+                  />
+                  <path
+                    d="M4.5 7L6 8.5L9.5 5"
+                    stroke="#2F5D4E"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                NHS DSPT-ready
+              </a>
+              <a class="trust-item" href="/security.html#hosting">
+                <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <circle
+                    cx="7"
+                    cy="7"
+                    r="6"
+                    stroke="#2F5D4E"
+                    stroke-width="1.4"
+                  />
+                  <path
+                    d="M4.5 7L6 8.5L9.5 5"
+                    stroke="#2F5D4E"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                UK data hosted
+              </a>
+              <a class="trust-item" href="/security.html#ico">
+                <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <circle
+                    cx="7"
+                    cy="7"
+                    r="6"
+                    stroke="#2F5D4E"
+                    stroke-width="1.4"
+                  />
+                  <path
+                    d="M4.5 7L6 8.5L9.5 5"
+                    stroke="#2F5D4E"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                ICO registered
+              </a>
+            </div>
+            <a class="hero-security-link" href="/security.html"
+              >Read our security posture <span aria-hidden="true">→</span></a
+            >
+            <div class="hero-attribution">
+              Built for the round, not the boardroom
+            </div>
+          </div>
+
+          <!-- Phone + paper composition -->
+          <div class="phone-stage">
+            <!-- Care plan paper behind phone -->
+            <div class="paper-behind" aria-hidden="true">
+              <div class="paper-stamp">CARE<br />PLAN<br />v.04</div>
+              <h4>Margaret Holbrook</h4>
+              <div class="paper-meta">REF · 04827 / DOM</div>
+              <div class="paper-line full"></div>
+              <div class="paper-line med"></div>
+              <div class="paper-line full"></div>
+              <div class="paper-line short"></div>
+              <div class="paper-line full"></div>
+              <div class="paper-line med"></div>
+              <div class="paper-line full"></div>
+              <div class="paper-line short"></div>
+              <div class="paper-line full"></div>
+              <div class="paper-line med"></div>
+              <div class="paper-line full"></div>
+              <div class="paper-line short"></div>
+            </div>
+
+            <!-- Phone -->
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="phone-notch"></div>
+                <div class="phone-status">
+                  <span>9:42</span>
+                  <span style="display: flex; gap: 5px; align-items: center">
+                    <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+                      <path
+                        d="M1 9L7 1L13 9"
+                        stroke="#2A2520"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <rect
+                        x="1"
+                        y="4"
+                        width="12"
+                        height="6"
+                        rx="1"
+                        stroke="#2A2520"
+                        stroke-width="1.5"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div class="phone-header">
+                  <div>
+                    <div class="phone-greeting">Good morning</div>
+                    <div class="phone-name">Sarah</div>
+                  </div>
+                  <div class="avatar">SO</div>
+                </div>
+
+                <div class="demo-stage">
+                  <!-- s0 — Visit list (the resting state) -->
+                  <div class="demo-state s0">
+                    <div class="ai-bar">
+                      <span class="dot"></span>
+                      <span>Ask anything about today's visits…</span>
+                    </div>
+                    <div class="visit-list">
+                      <div class="visit-section-label">
+                        In progress · 09:30 — 10:30
+                      </div>
+                      <div class="visit-card now">
+                        <div class="visit-time-row">
+                          <span class="visit-time">09:30 · 1 HR VISIT</span>
+                          <span class="visit-tag">Now</span>
+                        </div>
+                        <div class="visit-name">Margaret Holbrook</div>
+                        <div class="visit-meta">
+                          Type 2 diabetes · Mobility limited<br />Front door key
+                          in lockbox
+                        </div>
+                        <div class="visit-prep">
+                          Insulin before breakfast. Mug must be the green one —
+                          anything else upsets her.
+                        </div>
+                      </div>
+
+                      <div class="visit-section-label">Next up · 11:00</div>
+                      <div class="visit-card">
+                        <div class="visit-time-row">
+                          <span class="visit-time">11:00 · 30 MIN</span>
+                          <span class="visit-tag scheduled">Scheduled</span>
+                        </div>
+                        <div class="visit-name">Arthur Pemberton</div>
+                        <div class="visit-meta">
+                          PEG feed · Catheter care<br />Wife Eileen usually
+                          present
+                        </div>
+                      </div>
+
+                      <div class="visit-section-label">Later today · 14:15</div>
+                      <div class="visit-card">
+                        <div class="visit-time-row">
+                          <span class="visit-time">14:15 · 45 MIN</span>
+                          <span class="visit-tag scheduled">Scheduled</span>
+                        </div>
+                        <div class="visit-name">Ivy Whitfield</div>
+                        <div class="visit-meta">
+                          Dementia · Sundowning after 3pm<br />Avoid mentioning
+                          her late husband
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- s1 — Ask (typewriter) -->
+                  <div class="demo-state s1" aria-hidden="true">
+                    <div class="ai-bar active">
+                      <span class="dot"></span>
+                      <span class="typewriter"
+                        >What does Margaret need this morning?</span
+                      >
+                    </div>
+                    <div class="visit-list dim">
+                      <div class="visit-section-label">
+                        In progress · 09:30 — 10:30
+                      </div>
+                      <div class="visit-card now">
+                        <div class="visit-time-row">
+                          <span class="visit-time">09:30 · 1 HR VISIT</span>
+                          <span class="visit-tag">Now</span>
+                        </div>
+                        <div class="visit-name">Margaret Holbrook</div>
+                        <div class="visit-meta">
+                          Type 2 diabetes · Mobility limited
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- s2 — Thinking + sources -->
+                  <div class="demo-state s2" aria-hidden="true">
+                    <div class="ai-bar active">
+                      <span class="dot"></span>
+                      <span class="ai-bar-text"
+                        >What does Margaret need this morning?</span
+                      >
+                    </div>
+                    <div class="thinking-block">
+                      <div class="thinking-row">
+                        <span class="think-dots"><i></i><i></i><i></i></span>
+                        <span>Reading care plan <em>v.04</em>…</span>
+                      </div>
+                      <div class="source-pills">
+                        <span class="source-pill p1">
+                          <svg
+                            viewBox="0 0 12 12"
+                            width="11"
+                            height="11"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M2.5 1h5l2.5 2.5V11H2.5V1z"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M7 1v3h3"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                          Care plan · Margaret Holbrook
+                        </span>
+                        <span class="source-pill p2">
+                          <svg
+                            viewBox="0 0 12 12"
+                            width="11"
+                            height="11"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M2.5 1h5l2.5 2.5V11H2.5V1z"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M7 1v3h3"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                          Yesterday's handover
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- s3 — Answer card -->
+                  <div class="demo-state s3" aria-hidden="true">
+                    <div class="ai-bar active">
+                      <span class="dot"></span>
+                      <span class="ai-bar-text"
+                        >What does Margaret need this morning?</span
+                      >
+                    </div>
+                    <div class="answer-card">
+                      <div class="answer-title">
+                        Here's what Margaret needs:
+                      </div>
+                      <ul class="answer-bullets">
+                        <li>
+                          <svg
+                            viewBox="0 0 14 14"
+                            width="13"
+                            height="13"
+                            aria-hidden="true"
+                          >
+                            <circle
+                              cx="7"
+                              cy="7"
+                              r="6"
+                              stroke="currentColor"
+                              stroke-width="1.4"
+                              fill="none"
+                            />
+                            <path
+                              d="M4.5 7L6 8.5L9.5 5"
+                              stroke="currentColor"
+                              stroke-width="1.4"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              fill="none"
+                            />
+                          </svg>
+                          <span
+                            ><strong>Insulin before breakfast</strong> — not
+                            after.</span
+                          >
+                        </li>
+                        <li>
+                          <svg
+                            viewBox="0 0 14 14"
+                            width="13"
+                            height="13"
+                            aria-hidden="true"
+                          >
+                            <circle
+                              cx="7"
+                              cy="7"
+                              r="6"
+                              stroke="currentColor"
+                              stroke-width="1.4"
+                              fill="none"
+                            />
+                            <path
+                              d="M4.5 7L6 8.5L9.5 5"
+                              stroke="currentColor"
+                              stroke-width="1.4"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              fill="none"
+                            />
+                          </svg>
+                          <span
+                            >The <strong>green mug</strong> only — others upset
+                            her.</span
+                          >
+                        </li>
+                        <li>
+                          <svg
+                            viewBox="0 0 14 14"
+                            width="13"
+                            height="13"
+                            aria-hidden="true"
+                          >
+                            <circle
+                              cx="7"
+                              cy="7"
+                              r="6"
+                              stroke="currentColor"
+                              stroke-width="1.4"
+                              fill="none"
+                            />
+                            <path
+                              d="M4.5 7L6 8.5L9.5 5"
+                              stroke="currentColor"
+                              stroke-width="1.4"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              fill="none"
+                            />
+                          </svg>
+                          <span
+                            >Bath chair adjusted — flagged on yesterday's
+                            call.</span
+                          >
+                        </li>
+                      </ul>
+                      <div class="answer-grounding">
+                        Grounded in: Margaret Holbrook · care plan v.04
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============= SARAH'S DAY ============= -->
+      <section class="day" id="day">
+        <div class="container" style="padding: 0">
+          <div class="reveal">
+            <div class="section-eyebrow">A day on the round</div>
+          </div>
+          <h2 class="reveal delay-1">
+            Same carer. Same town. <em>Better visits.</em>
+          </h2>
+          <p class="lead reveal delay-2">
+            Here's what Bryndeli changes for Sarah, a senior carer in the West
+            Midlands. Three visits, one shift, three different moments where the
+            right information arrives just in time.
+          </p>
+
+          <div class="day-grid">
+            <div class="day-card reveal delay-1">
+              <div class="day-time">
+                <span>Morning</span>
+                <span class="time-num">09:30</span>
+              </div>
+              <h3>Walks in already knowing.</h3>
+              <p>
+                Margaret's insulin needs to come before breakfast — not after.
+                The mug must be green. Today she needs her bath chair adjusted
+                from yesterday's call. Sarah knows all this before she knocks.
+              </p>
+              <p class="day-quote">
+                "I used to walk in and ask. Now I walk in and know."
+              </p>
+            </div>
+            <div class="day-card reveal delay-2">
+              <div class="day-time">
+                <span>Midday</span>
+                <span class="time-num">12:45</span>
+              </div>
+              <h3>Asks instead of ringing.</h3>
+              <p>
+                Arthur's wife mentions a new medication. Instead of calling the
+                office, Sarah asks Bryndeli — which checks the latest GP letter
+                and confirms it's compatible with his existing meds. Office
+                stays unbothered.
+              </p>
+              <p class="day-quote">
+                "My manager used to take twenty calls a shift. Now she takes
+                two."
+              </p>
+            </div>
+            <div class="day-card reveal delay-3">
+              <div class="day-time">
+                <span>Afternoon</span>
+                <span class="time-num">14:15</span>
+              </div>
+              <h3>Spots what others missed.</h3>
+              <p>
+                Ivy seems quieter than usual. Bryndeli surfaces that two carers
+                earlier in the week noted "withdrawn after lunch." Sarah flags
+                it. The next visit is moved earlier — before sundowning hits.
+              </p>
+              <p class="day-quote">
+                "The whole team is in your pocket. Even the ones not on shift."
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============= HOW IT WORKS ============= -->
+      <section class="how" id="how">
+        <div class="container" style="padding: 0">
+          <div class="reveal">
+            <div class="section-eyebrow">How it works</div>
+          </div>
+          <h2 class="reveal delay-1">
+            Drop in your existing care plans. <em>The AI does the rest.</em>
+          </h2>
+          <p class="lead reveal delay-2">
+            No replacement system. No mass retraining. Bryndeli reads what you
+            already have and makes it speak the language of the round.
+          </p>
+
+          <div class="steps">
+            <div class="step reveal delay-1">
+              <div class="step-num">i.</div>
+              <h3>Connect or upload</h3>
+              <p>
+                Pull from Birdie, PASS, or any care management system. Or upload
+                existing PDFs and Word docs. We handle the rest — no clean-up
+                required.
+              </p>
+            </div>
+            <div class="step reveal delay-2">
+              <div class="step-num">ii.</div>
+              <h3>The AI reads everything</h3>
+              <p>
+                Our model — trained on real UK care plans — extracts the moments
+                that matter: medication timings, mobility risks, behavioural
+                triggers, family preferences.
+              </p>
+            </div>
+            <div class="step reveal delay-3">
+              <div class="step-num">iii.</div>
+              <h3>Carers ask, in plain English</h3>
+              <p>
+                "What does Margaret need this morning?" Bryndeli answers in
+                seconds — visit-tailored, time-aware, and grounded in the actual
+                plan. No hallucinations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============= INTEGRATIONS STRIP ============= -->
+      <section class="integrations">
+        <div class="reveal">
+          <div class="section-eyebrow">Connects to what you already use</div>
+        </div>
+        <p class="integrations-lead reveal delay-1">
+          Pulls directly from your existing system. No clean-up required.
+        </p>
+        <div class="integration-grid reveal delay-2">
+          <span class="integration-pill">
+            <span class="dot soon"></span>
+            <span class="name">BIRDIE</span>
+          </span>
+          <span class="integration-pill">
+            <span class="dot soon"></span>
+            <span class="name">PASS</span>
+          </span>
+          <span class="integration-pill">
+            <span class="dot soon"></span>
+            <span class="name">PERSON CENTRED SOFTWARE</span>
+          </span>
+          <span class="integration-pill">
+            <span class="dot soon"></span>
+            <span class="name">LOG MY CARE</span>
+          </span>
+          <span class="integration-pill">
+            <span class="dot soon"></span>
+            <span class="name">NOURISH</span>
+          </span>
+          <span class="integration-pill">
+            <span class="dot live"></span>
+            <span class="name">PDF / WORD UPLOAD</span>
+          </span>
+        </div>
+        <div class="integration-key reveal delay-3">
+          <span><span class="key-dot live"></span> Available now</span>
+          <span><span class="key-dot soon"></span> Coming soon</span>
+        </div>
+      </section>
+
+      <!-- ============= WHAT BRYNDELI ANSWERS ============= -->
+      <section id="answers" class="answers">
+        <div class="reveal">
+          <div class="section-eyebrow">Concrete examples</div>
+        </div>
+        <h2 class="reveal delay-1">
+          Real questions. <em>Real answers.</em> Grounded in the plan.
+        </h2>
+        <p class="lead reveal delay-2">
+          A snapshot of what carers actually ask, and what Bryndeli actually
+          returns. Every answer is sourced from the customer's own care plans,
+          handovers, and team notes — and it tells you exactly where it came
+          from.
+        </p>
+
+        <div class="answers-grid">
+          <!-- Pair 1 — Morning brief -->
+          <div class="answer-pair reveal delay-1">
+            <div class="q-bubble">
+              <span class="q-label">CARER ASKS</span>
+              <p>"What does Margaret need this morning?"</p>
+            </div>
+            <div class="a-card">
+              <span class="a-label">Bryndeli</span>
+              <ul>
+                <li><strong>Insulin before breakfast</strong> — not after.</li>
+                <li>The <strong>green mug</strong> only — others upset her.</li>
+                <li>Bath chair adjusted from yesterday's call.</li>
+              </ul>
+              <div class="a-sources">
+                <span class="src-pill">Care plan v.04 · § Morning routine</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pair 2 — Family question -->
+          <div class="answer-pair reveal delay-2">
+            <div class="q-bubble">
+              <span class="q-label">CARER ASKS</span>
+              <p>
+                "Arthur's wife mentioned a new med. Is it OK with what he's
+                already on?"
+              </p>
+            </div>
+            <div class="a-card">
+              <span class="a-label">Bryndeli</span>
+              <p class="a-prose">
+                Yes — fully compatible with his current medications. Worth
+                flagging at the next handover so the team has it on record.
+              </p>
+              <div class="a-sources">
+                <span class="src-pill">GP letter · 14 Apr</span>
+                <span class="src-pill">Care plan v.04 · § Allergies</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pair 3 — Behavioural pattern -->
+          <div class="answer-pair reveal delay-1">
+            <div class="q-bubble">
+              <span class="q-label">CARER ASKS</span>
+              <p>"Has Ivy been quieter than usual lately?"</p>
+            </div>
+            <div class="a-card">
+              <span class="a-label">Bryndeli</span>
+              <p class="a-prose">
+                Two carers in the last 3 days noted "withdrawn after lunch."
+                Suggest moving today's 14:15 visit earlier, before sundowning
+                hits.
+              </p>
+              <div class="a-sources">
+                <span class="src-pill">Team handover · last 7 days</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pair 4 — Cover shift -->
+          <div class="answer-pair reveal delay-2">
+            <div class="q-bubble">
+              <span class="q-label">COVER CARER ASKS</span>
+              <p>
+                "I've never visited Margaret. What should I know in 30 seconds?"
+              </p>
+            </div>
+            <div class="a-card">
+              <span class="a-label">Bryndeli</span>
+              <ul>
+                <li>
+                  Type 2 diabetes — insulin <strong>before</strong> breakfast.
+                </li>
+                <li>Mobility limited — bath chair, no stairs.</li>
+                <li>
+                  Front door key in the lockbox to the right of the porch.
+                </li>
+                <li>Green mug only. It matters.</li>
+              </ul>
+              <div class="a-sources">
+                <span class="src-pill">Care plan v.04</span>
+                <span class="src-pill">Last 14 days of visit notes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============= FAQ ============= -->
+      <section class="faq" id="faq">
+        <div class="reveal">
+          <div class="section-eyebrow">Common questions</div>
+        </div>
+        <h2 class="reveal delay-1">
+          What care managers <em>ask</em> before they say yes.
+        </h2>
+
+        <div class="faq-list reveal delay-2">
+          <details class="faq-item">
+            <summary>
+              <span>Does Bryndeli replace our care management system?</span>
+              <svg
+                class="faq-icon"
+                viewBox="0 0 14 14"
+                width="16"
+                height="16"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 1v12M1 7h12"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </summary>
+            <div class="faq-body">
+              <p>
+                No. Bryndeli sits alongside Birdie, PASS, Person Centred
+                Software, Log my Care, and others — reading your existing care
+                plans, handovers, and notes. Your team keeps the systems they
+                know. Bryndeli adds the layer that makes them speak the language
+                of the round.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span
+                >What happens if a carer asks something the care plan doesn't
+                cover?</span
+              >
+              <svg
+                class="faq-icon"
+                viewBox="0 0 14 14"
+                width="16"
+                height="16"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 1v12M1 7h12"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </summary>
+            <div class="faq-body">
+              <p>
+                Bryndeli says so explicitly. It will surface the closest related
+                information from the plan or recent handovers — and tell the
+                carer where to look or who to call. We deliberately built it to
+                refuse to fill gaps it can't ground in source material. No
+                hallucinations.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Where is our data stored, and who can see it?</span>
+              <svg
+                class="faq-icon"
+                viewBox="0 0 14 14"
+                width="16"
+                height="16"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 1v12M1 7h12"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </summary>
+            <div class="faq-body">
+              <p>
+                UK-only data residency, encryption at rest and in transit, and
+                access scoped to the people you authorise. We do not train AI
+                models on your data. Full security posture, sub-processors, and
+                DSPT/ICO status live on the
+                <a class="link" href="/security.html">security page</a>.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span
+                >How long does setup take? Do we need to retrain our team?</span
+              >
+              <svg
+                class="faq-icon"
+                viewBox="0 0 14 14"
+                width="16"
+                height="16"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 1v12M1 7h12"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </summary>
+            <div class="faq-body">
+              <p>
+                Days, not months. We ingest your existing PDFs, exports, and
+                care management connections — no clean-up required — and your
+                team is trialling within a week. There's nothing for carers to
+                learn beyond "ask it a question." That's the entire interface.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>How much does it cost?</span>
+              <svg
+                class="faq-icon"
+                viewBox="0 0 14 14"
+                width="16"
+                height="16"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 1v12M1 7h12"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </summary>
+            <div class="faq-body">
+              <p>
+                Per-carer monthly seat, scaled to your team size. We tailor a
+                quote on the demo call once we've understood your provider mix
+                and the systems you're already running.
+                <a
+                  class="link"
+                  href="mailto:hello@bryndeli.co.uk?subject=Pricing%20enquiry"
+                  >Email us for a number</a
+                >
+                if a demo isn't convenient yet.
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <a class="faq-more reveal delay-3" href="/faq.html"
+          >More answers on the FAQ page <span aria-hidden="true">→</span></a
+        >
+      </section>
+
+      <!-- ============= CTA ============= -->
+      <section class="cta" id="demo">
+        <h2 class="reveal">Give your team <em>their confidence back.</em></h2>
+        <p class="reveal delay-1">
+          Book a 15-minute demo. We'll show you Bryndeli using care plans that
+          look like yours — no slide deck, no sales pressure.
+        </p>
+        <div class="reveal delay-2">
+          <a href="mailto:hello@bryndeli.co.uk" class="btn btn-large"
+            >Book your demo <span class="arr">→</span></a
+          >
+        </div>
+      </section>
+
+      <!-- ============= FOOTER ============= -->
+      <footer>
+        <div class="footer-grid">
+          <div>
+            <a href="/" class="logo-lockup" aria-label="Bryndeli home">
+              <svg class="symbol" viewBox="0 0 200 200" aria-hidden="true">
+                <circle
+                  cx="100"
+                  cy="100"
+                  r="76"
+                  fill="none"
+                  stroke="#2F5D4E"
+                  stroke-width="11"
+                  stroke-linecap="round"
+                  stroke-dasharray="310 138"
+                  transform="rotate(-32 100 100)"
+                />
+                <circle
+                  cx="100"
+                  cy="100"
+                  r="48"
+                  fill="none"
+                  stroke="#2F5D4E"
+                  stroke-width="9"
+                  stroke-linecap="round"
+                  stroke-dasharray="206 88"
+                  transform="rotate(64 100 100)"
+                />
+                <circle cx="100" cy="100" r="17" fill="#C9614A" />
+              </svg>
+              <span class="word">bryndeli</span>
+            </a>
+            <p class="footer-tagline">
+              Quietly putting the right care plan, in the right hands, at the
+              right moment.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h5>Product</h5>
+            <ul>
+              <li><a href="/product.html">Overview</a></li>
+              <li><a href="#how">How it works</a></li>
+              <li><a href="#answers">Examples</a></li>
+              <li>
+                <a href="mailto:hello@bryndeli.co.uk?subject=Pricing%20enquiry"
+                  >Talk to sales</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="mailto:hello@bryndeli.co.uk">Contact</a></li>
+              <li>
+                <a
+                  href="mailto:hello@bryndeli.co.uk?subject=Compliance%20enquiry"
+                  >Compliance</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Legal</h5>
+            <ul>
+              <li><a href="/legal/privacy.html">Privacy Policy</a></li>
+              <li><a href="/legal/terms.html">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Bryndeli Ltd · Registered in England &amp; Wales</span>
+          <span>Made in Telford</span>
+        </div>
+      </footer>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Bryndeli Ltd · Registered in England &amp; Wales</span>
-      <span>Made in Telford</span>
-    </div>
-  </footer>
 
-</div>
+    <script>
+      // Sticky nav background on scroll
+      const nav = document.getElementById("nav");
+      const onScroll = () => {
+        if (window.scrollY > 24) nav.classList.add("scrolled");
+        else nav.classList.remove("scrolled");
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
 
-<script>
-  // Sticky nav background on scroll
-  const nav = document.getElementById('nav');
-  const onScroll = () => {
-    if (window.scrollY > 24) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
+      // ============= MOBILE MENU TOGGLE =============
+      const navToggle = document.getElementById("navToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const body = document.body;
 
-  // ============= MOBILE MENU TOGGLE =============
-  const navToggle = document.getElementById('navToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const body = document.body;
+      const setMenu = (open) => {
+        navToggle.setAttribute("aria-expanded", String(open));
+        navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        mobileMenu.classList.toggle("open", open);
+        mobileMenu.setAttribute("aria-hidden", String(!open));
+        body.classList.toggle("menu-open", open);
+      };
 
-  const setMenu = (open) => {
-    navToggle.setAttribute('aria-expanded', String(open));
-    navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    mobileMenu.classList.toggle('open', open);
-    mobileMenu.setAttribute('aria-hidden', String(!open));
-    body.classList.toggle('menu-open', open);
-  };
+      if (navToggle && mobileMenu) {
+        navToggle.addEventListener("click", () => {
+          const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+          setMenu(!isOpen);
+        });
 
-  if (navToggle && mobileMenu) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-      setMenu(!isOpen);
-    });
+        // Close menu when a link inside it is tapped
+        mobileMenu.querySelectorAll("[data-mobile-nav]").forEach((link) => {
+          link.addEventListener("click", () => setMenu(false));
+        });
 
-    // Close menu when a link inside it is tapped
-    mobileMenu.querySelectorAll('[data-mobile-nav]').forEach(link => {
-      link.addEventListener('click', () => setMenu(false));
-    });
-
-    // Close on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
-        setMenu(false);
-        navToggle.focus();
+        // Close on Escape
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            navToggle.getAttribute("aria-expanded") === "true"
+          ) {
+            setMenu(false);
+            navToggle.focus();
+          }
+        });
       }
-    });
-  }
 
-  // Reveal-on-scroll
-  const reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-    reveals.forEach(el => io.observe(el));
-  } else {
-    reveals.forEach(el => el.classList.add('visible'));
-  }
-</script>
-
-</body>
+      // Reveal-on-scroll
+      const reveals = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15, rootMargin: "0px 0px -60px 0px" },
+        );
+        reveals.forEach((el) => io.observe(el));
+      } else {
+        reveals.forEach((el) => el.classList.add("visible"));
+      }
+    </script>
+  </body>
 </html>
