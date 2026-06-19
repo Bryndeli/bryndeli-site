@@ -29,8 +29,7 @@
 <body>
 
 <!-- ============= NAV ============= -->
-<div class="container wide">
-  <nav id="nav">
+<nav id="nav">
     <a href="/" class="logo-lockup" aria-label="Bryndeli home">
       <svg class="symbol" viewBox="0 0 200 200" aria-hidden="true">
         <circle cx="100" cy="100" r="76" fill="none" stroke="#2F5D4E" stroke-width="11" stroke-linecap="round" stroke-dasharray="310 138" transform="rotate(-32 100 100)"/>
@@ -43,22 +42,30 @@
       <li><a href="/#how">How it works</a></li>
       <li><a href="/#day">Stories</a></li>
       <li><a href="/product.html">Product</a></li>
+      <li><a href="/pricing.html">Pricing</a></li>
       <li><a href="/about.html" aria-current="page">About</a></li>
-      <li><a href="/#demo" class="btn btn-outline">Book a demo</a></li>
     </ul>
+    <div class="nav-actions">
+      <a href="https://bryndeli.app" class="btn btn-signin">
+        <svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-3.6 3.6-6.5 8-6.5s8 2.9 8 6.5"/></svg>
+        Sign in
+      </a>
+      <a href="/#demo" class="btn">Book a demo</a>
+    </div>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
       <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
       <span class="toggle-label">Menu</span>
     </button>
   </nav>
-</div>
 
 <!-- ============= MOBILE MENU ============= -->
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <a href="/#how" data-mobile-nav>How it works</a>
   <a href="/#day" data-mobile-nav>Stories</a>
   <a href="/product.html" data-mobile-nav>Product</a>
+  <a href="/pricing.html" data-mobile-nav>Pricing</a>
   <a href="/about.html" data-mobile-nav aria-current="page">About</a>
+  <a href="https://bryndeli.app" data-mobile-nav>Sign in</a>
   <a href="/#demo" class="mobile-cta" data-mobile-nav>Book a 15-min demo →</a>
 </div>
 
