@@ -326,26 +326,8 @@ h1 em { font-style: italic; font-weight: 500; color: var(--terracotta); }
   justify-content: center;
   flex-wrap: wrap;
 }
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 26px;
-  background: var(--pine);
-  color: var(--oat);
-  text-decoration: none;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 500;
-  transition: transform 0.2s, background 0.2s;
-}
-.btn:hover { background: var(--pine-deep); transform: translateY(-1px); }
-.btn-outline {
-  background: transparent;
-  color: var(--pine);
-  border: 1px solid var(--rule-strong);
-}
-.btn-outline:hover { background: var(--pine); color: var(--oat); border-color: var(--pine); }
+/* Button styles (.btn, .btn-outline, .btn-signin) come from base.css — kept
+   global so the nav CTAs render identically on every page. */
 
 
 /* ============= RESPONSIVE ============= */

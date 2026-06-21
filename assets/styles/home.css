@@ -1396,7 +1396,6 @@ h2 em {
 
 /* Phone */
 @media (max-width: 580px) {
-  :root { --gutter: 20px; }
   section { padding: 72px 0; }
   .day, .how, .cta {
     padding-left: var(--gutter);
@@ -1482,7 +1481,6 @@ h2 em {
 
 /* Very small phones */
 @media (max-width: 380px) {
-  :root { --gutter: 16px; }
   .phone { width: 260px; height: 520px; }
   .phone-stage { height: 510px; }
   .typewriter { font-size: 12px; }
