@@ -1300,6 +1300,128 @@ h2 em {
 .faq-more:hover span { transform: translateX(3px); }
 
 
+/* ============= WAITING LIST ============= */
+.waitlist {
+  padding: 100px 0 80px;
+  text-align: center;
+}
+.waitlist h2 { max-width: 640px; margin: 0 auto 20px; }
+.waitlist p {
+  max-width: 520px;
+  margin: 0 auto 36px;
+  color: var(--bark-soft);
+  font-size: 17px;
+}
+
+.waitlist-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  width: min(540px, calc(100vw - 48px));
+  max-height: min(760px, calc(100vh - 48px));
+  overflow-y: auto;
+  background: white;
+  color: var(--bark);
+  box-shadow: var(--shadow-card-strong);
+}
+.waitlist-modal::backdrop {
+  background: rgba(42, 37, 32, 0.5);
+  backdrop-filter: blur(2px);
+}
+.waitlist-modal[open] { animation: fadeUp 0.35s var(--ease) both; }
+
+.waitlist-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  color: var(--bark-soft);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.waitlist-modal-close:hover { background: var(--pine); color: var(--oat); border-color: var(--pine); }
+
+#waitlistFormPanel h3,
+#waitlistSuccessPanel h3 {
+  font-family: var(--serif);
+  font-size: clamp(22px, 4vw, 26px);
+  font-weight: 500;
+  color: var(--pine-deep);
+  letter-spacing: -0.015em;
+  margin: 0 0 8px;
+  padding-right: 32px;
+}
+.waitlist-modal-sub {
+  color: var(--bark-soft);
+  font-size: 14.5px;
+  margin: 0 0 24px;
+}
+
+#waitlistForm { display: flex; flex-direction: column; gap: 18px; }
+.waitlist-field { display: flex; flex-direction: column; gap: 6px; }
+.waitlist-field label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pine);
+  font-weight: 500;
+}
+.waitlist-optional { text-transform: none; letter-spacing: 0; color: var(--bark-soft); }
+
+.waitlist-field input,
+.waitlist-field select,
+.waitlist-field textarea {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--bark);
+  background: var(--oat-warm);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.waitlist-field input:focus,
+.waitlist-field select:focus,
+.waitlist-field textarea:focus {
+  outline: none;
+  border-color: var(--pine);
+  box-shadow: 0 0 0 3px rgba(47, 93, 78, 0.14);
+}
+.waitlist-field textarea { resize: vertical; min-height: 68px; }
+
+.waitlist-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.waitlist-error {
+  font-size: 14px;
+  color: var(--terracotta-deep);
+  background: rgba(201, 97, 74, 0.1);
+  border: 1px solid rgba(201, 97, 74, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+}
+
+#waitlistForm .btn,
+#waitlistSuccessPanel .btn { width: 100%; justify-content: center; }
+#waitlistSuccessPanel p { color: var(--bark-soft); margin-bottom: 28px; }
+
+
 /* ============= CTA ============= */
 .cta {
   background: var(--terracotta);
@@ -1477,6 +1599,12 @@ h2 em {
   .cta { margin-top: 56px; }
   .cta h2 { font-size: clamp(28px, 7vw, 36px); margin-bottom: 20px; }
   .cta p { font-size: 16px; margin-bottom: 32px; }
+
+  /* Waiting list */
+  .waitlist { padding: 64px 0 48px; }
+  .waitlist p { font-size: 16px; margin-bottom: 28px; }
+  .waitlist .btn { width: 100%; justify-content: center; }
+  .waitlist-modal { padding: 24px 20px; border-radius: var(--radius-md); }
 }
 
 /* Very small phones */
