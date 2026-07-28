@@ -15,22 +15,8 @@ python3 -m http.server 8000
 # or: npx serve .
 # or just double-click index.html in a browser
 
-# Visit http://localhost:8000
+
 ```
-
----
-
-### Brand consistency
-
-The site uses the locked-in Bryndeli identity:
-
-- **Display type**: Fraunces (variable serif — `opsz 144` for the hero, `opsz 100` for sections)
-- **Body type**: Inter
-- **Mono type**: JetBrains Mono (eyebrow labels and trust pills)
-- **Palette**: Warm Sage — Pine `#2F5D4E`, Terracotta `#C9614A`, Oat `#F8EDE0`, Honey `#E0B469`
-- **Mark**: The Nest — two concentric broken rings around a held terracotta core
-
-
 ---
 
 The lightweight, privacy-respecting options:

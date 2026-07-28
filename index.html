@@ -980,6 +980,136 @@
       </section>
 
       <!-- ============= CTA ============= -->
+      <!-- ============= WAITING LIST ============= -->
+      <section class="waitlist" id="waitlist">
+        <div class="reveal">
+          <div class="section-eyebrow">Early access</div>
+        </div>
+        <h2 class="reveal delay-1">Join the waiting list</h2>
+        <p class="reveal delay-2">
+          We're onboarding a small number of pilot services on Bryndeli.
+          Join the list and I'll be in touch personally when we're ready
+          for your team.
+        </p>
+        <div class="reveal delay-3">
+          <button
+            type="button"
+            class="btn btn-large"
+            data-waitlist-open
+            aria-haspopup="dialog"
+          >
+            Join the waiting list <span class="arr">→</span>
+          </button>
+        </div>
+      </section>
+
+      <dialog id="waitlistModal" class="waitlist-modal" aria-labelledby="waitlistTitle">
+        <button
+          type="button"
+          class="waitlist-modal-close"
+          data-waitlist-close
+          aria-label="Close"
+        >
+          <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
+            <path
+              d="M5 5L15 15M15 5L5 15"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+
+        <div id="waitlistFormPanel">
+          <h3 id="waitlistTitle">Join the waiting list</h3>
+          <p class="waitlist-modal-sub">
+            Tell us a bit about your service — takes less than a minute.
+          </p>
+
+          <form id="waitlistForm" novalidate>
+            <div class="waitlist-honeypot" aria-hidden="true">
+              <label for="waitlistWebsite">Leave this field blank</label>
+              <input
+                type="text"
+                id="waitlistWebsite"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="waitlist-field">
+              <label for="waitlistName">Name</label>
+              <input
+                type="text"
+                id="waitlistName"
+                name="name"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="waitlist-field">
+              <label for="waitlistEmail">Email</label>
+              <input
+                type="email"
+                id="waitlistEmail"
+                name="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="waitlist-field">
+              <label for="waitlistServiceName">Service name</label>
+              <input
+                type="text"
+                id="waitlistServiceName"
+                name="serviceName"
+                autocomplete="organization"
+                required
+              />
+            </div>
+
+            <div class="waitlist-field">
+              <label for="waitlistRole">Role</label>
+              <select id="waitlistRole" name="role" required>
+                <option value="" disabled selected>Select your role</option>
+                <option value="Owner">Owner</option>
+                <option value="Manager">Manager</option>
+                <option value="Carer">Carer</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="waitlist-field">
+              <label for="waitlistInterest"
+                >What interests you <span class="waitlist-optional">(optional)</span></label
+              >
+              <textarea
+                id="waitlistInterest"
+                name="interest"
+                rows="3"
+              ></textarea>
+            </div>
+
+            <div class="waitlist-error" id="waitlistError" role="alert" hidden></div>
+
+            <button type="submit" class="btn btn-large" id="waitlistSubmitBtn">
+              Join the waiting list
+            </button>
+          </form>
+        </div>
+
+        <div id="waitlistSuccessPanel" hidden>
+          <h3>Thanks, <span id="waitlistSuccessName"></span> — you're on the list.</h3>
+          <p>Check your email for a confirmation. We'll be in touch.</p>
+          <button type="button" class="btn btn-large" data-waitlist-close>
+            Close
+          </button>
+        </div>
+      </dialog>
+
       <section class="cta" id="demo">
         <h2 class="reveal">Give your team <em>their confidence back.</em></h2>
         <p class="reveal delay-1">
@@ -1133,6 +1263,105 @@
         reveals.forEach((el) => io.observe(el));
       } else {
         reveals.forEach((el) => el.classList.add("visible"));
+      }
+
+      // ============= WAITING LIST MODAL =============
+      const waitlistModal = document.getElementById("waitlistModal");
+      const waitlistForm = document.getElementById("waitlistForm");
+
+      if (waitlistModal && waitlistForm) {
+        const waitlistError = document.getElementById("waitlistError");
+        const waitlistFormPanel = document.getElementById("waitlistFormPanel");
+        const waitlistSuccessPanel = document.getElementById(
+          "waitlistSuccessPanel",
+        );
+        const waitlistSuccessName = document.getElementById(
+          "waitlistSuccessName",
+        );
+        const waitlistSubmitBtn = document.getElementById(
+          "waitlistSubmitBtn",
+        );
+        const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        document.querySelectorAll("[data-waitlist-open]").forEach((btn) => {
+          btn.addEventListener("click", () => waitlistModal.showModal());
+        });
+
+        document.querySelectorAll("[data-waitlist-close]").forEach((btn) => {
+          btn.addEventListener("click", () => waitlistModal.close());
+        });
+
+        waitlistModal.addEventListener("click", (e) => {
+          if (e.target === waitlistModal) waitlistModal.close();
+        });
+
+        waitlistModal.addEventListener("close", () => {
+          waitlistFormPanel.hidden = false;
+          waitlistSuccessPanel.hidden = true;
+          waitlistForm.reset();
+          waitlistError.hidden = true;
+        });
+
+        waitlistForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          waitlistError.hidden = true;
+
+          const data = new FormData(waitlistForm);
+          const name = String(data.get("name") || "").trim();
+          const email = String(data.get("email") || "").trim();
+          const serviceName = String(data.get("serviceName") || "").trim();
+          const role = String(data.get("role") || "");
+          const interest = String(data.get("interest") || "").trim();
+          const website = String(data.get("website") || "");
+
+          if (!name || !email || !serviceName || !role) {
+            waitlistError.textContent =
+              "Please fill in your name, email, service name, and role.";
+            waitlistError.hidden = false;
+            return;
+          }
+          if (!emailRe.test(email)) {
+            waitlistError.textContent = "Please enter a valid email address.";
+            waitlistError.hidden = false;
+            return;
+          }
+
+          waitlistSubmitBtn.disabled = true;
+          waitlistSubmitBtn.textContent = "Joining…";
+
+          try {
+            const res = await fetch("/api/waitlist", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                name,
+                email,
+                serviceName,
+                role,
+                interest,
+                website,
+              }),
+            });
+            const result = await res.json().catch(() => ({}));
+
+            if (!res.ok || !result.ok) {
+              throw new Error(
+                result.error || "Something went wrong. Please try again.",
+              );
+            }
+
+            waitlistSuccessName.textContent = name;
+            waitlistFormPanel.hidden = true;
+            waitlistSuccessPanel.hidden = false;
+          } catch (err) {
+            waitlistError.textContent =
+              err.message || "Something went wrong. Please try again.";
+            waitlistError.hidden = false;
+          } finally {
+            waitlistSubmitBtn.disabled = false;
+            waitlistSubmitBtn.textContent = "Join the waiting list";
+          }
+        });
       }
     </script>
   </body>

@@ -19,6 +19,14 @@ node_modules/
 package-lock.json
 .pnpm-debug.log*
 
+# Secrets
+.env
+.env.local
+.vercel
+
+# prompt
+prompt/
+
 # Build artefacts (none currently — site is plain static)
 dist/
 build/
