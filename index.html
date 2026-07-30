@@ -76,11 +76,11 @@
           <span class="word">bryndeli</span>
         </a>
         <ul class="nav-links">
-          <li><a href="#how">How it works</a></li>
-          <li><a href="#day">Stories</a></li>
+          <li><a href="/" aria-current="page">Home</a></li>
           <li><a href="/product.html">Product</a></li>
           <li><a href="/pricing.html">Pricing</a></li>
           <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
         <div class="nav-actions">
           <a href="https://bryndeli.app" class="btn btn-signin">
@@ -105,13 +105,13 @@
 
       <!-- ============= MOBILE MENU ============= -->
       <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-        <a href="#how" data-mobile-nav>How it works</a>
-        <a href="#day" data-mobile-nav>Stories</a>
+        <a href="/" data-mobile-nav aria-current="page">Home</a>
         <a href="/product.html" data-mobile-nav>Product</a>
         <a href="/pricing.html" data-mobile-nav>Pricing</a>
         <a href="#answers" data-mobile-nav>Examples</a>
         <a href="#faq" data-mobile-nav>FAQ</a>
         <a href="/about.html" data-mobile-nav>About</a>
+        <a href="/contact.html" data-mobile-nav>Contact</a>
         <a href="https://bryndeli.app" data-mobile-nav>Sign in</a>
         <a href="#demo" class="mobile-cta" data-mobile-nav
           >Book a 15-min demo →</a
@@ -140,14 +140,11 @@
               they need it.
             </p>
             <div class="hero-cta">
-              <a href="#demo" class="btn btn-large"
-                >Book a 15-min demo <span class="arr">→</span></a
+              <a href="#waitlist" class="btn btn-large"
+                >Join the waiting list <span class="arr">→</span></a
               >
-              <a href="#how" class="btn btn-outline btn-large"
-                >See how it works</a
-              >
-              <a href="#answers" class="hero-tour-link"
-                >Watch the 60-second tour <span aria-hidden="true">→</span></a
+              <a href="#how" class="hero-tour-link"
+                >See how it works <span aria-hidden="true">→</span></a
               >
             </div>
             <div class="trust-row">
@@ -1021,6 +1018,7 @@
         </button>
 
         <div id="waitlistFormPanel">
+          <div class="waitlist-modal-eyebrow">Early access</div>
           <h3 id="waitlistTitle">Join the waiting list</h3>
           <p class="waitlist-modal-sub">
             Tell us a bit about your service — takes less than a minute.
@@ -1038,48 +1036,90 @@
               />
             </div>
 
-            <div class="waitlist-field">
+            <div class="waitlist-field" id="waitlistNameField">
               <label for="waitlistName">Name</label>
-              <input
-                type="text"
-                id="waitlistName"
-                name="name"
-                autocomplete="name"
-                required
-              />
+              <div class="waitlist-input">
+                <svg class="waitlist-input-icon" viewBox="0 0 20 20" aria-hidden="true">
+                  <circle cx="10" cy="6.5" r="3.25" stroke="currentColor" stroke-width="1.5" fill="none" />
+                  <path d="M3.5 17c0-3.5 3-5.75 6.5-5.75s6.5 2.25 6.5 5.75" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" />
+                </svg>
+                <input
+                  type="text"
+                  id="waitlistName"
+                  name="name"
+                  autocomplete="name"
+                  aria-describedby="waitlistNameError"
+                  required
+                />
+              </div>
+              <span class="waitlist-field-error" id="waitlistNameError" role="alert" hidden></span>
             </div>
 
-            <div class="waitlist-field">
+            <div class="waitlist-field" id="waitlistEmailField">
               <label for="waitlistEmail">Email</label>
-              <input
-                type="email"
-                id="waitlistEmail"
-                name="email"
-                autocomplete="email"
-                required
-              />
+              <div class="waitlist-input">
+                <svg class="waitlist-input-icon" viewBox="0 0 20 20" aria-hidden="true">
+                  <rect x="2.5" y="4.5" width="15" height="11" rx="2" stroke="currentColor" stroke-width="1.5" fill="none" />
+                  <path d="M3.5 5.5l6.5 5 6.5-5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <input
+                  type="email"
+                  id="waitlistEmail"
+                  name="email"
+                  autocomplete="email"
+                  aria-describedby="waitlistEmailError"
+                  required
+                />
+              </div>
+              <span class="waitlist-field-error" id="waitlistEmailError" role="alert" hidden></span>
             </div>
 
-            <div class="waitlist-field">
+            <div class="waitlist-field" id="waitlistServiceNameField">
               <label for="waitlistServiceName">Service name</label>
-              <input
-                type="text"
-                id="waitlistServiceName"
-                name="serviceName"
-                autocomplete="organization"
-                required
-              />
+              <div class="waitlist-input">
+                <svg class="waitlist-input-icon" viewBox="0 0 20 20" aria-hidden="true">
+                  <rect x="3" y="7.5" width="14" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none" />
+                  <path d="M7 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5" stroke="currentColor" stroke-width="1.5" fill="none" />
+                  <path d="M3 11.5h14" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+                <input
+                  type="text"
+                  id="waitlistServiceName"
+                  name="serviceName"
+                  autocomplete="organization"
+                  aria-describedby="waitlistServiceNameError"
+                  required
+                />
+              </div>
+              <span class="waitlist-field-error" id="waitlistServiceNameError" role="alert" hidden></span>
             </div>
 
-            <div class="waitlist-field">
-              <label for="waitlistRole">Role</label>
-              <select id="waitlistRole" name="role" required>
-                <option value="" disabled selected>Select your role</option>
-                <option value="Owner">Owner</option>
-                <option value="Manager">Manager</option>
-                <option value="Carer">Carer</option>
-                <option value="Other">Other</option>
-              </select>
+            <div class="waitlist-field" id="waitlistRoleField">
+              <span class="waitlist-field-label" id="waitlistRoleLabel">Role</span>
+              <div
+                class="waitlist-role-group"
+                role="radiogroup"
+                aria-labelledby="waitlistRoleLabel"
+                aria-describedby="waitlistRoleError"
+              >
+                <span class="waitlist-role-item">
+                  <input type="radio" class="waitlist-role-input" id="roleOwner" name="role" value="Owner" required />
+                  <label for="roleOwner" class="waitlist-role-pill">Owner</label>
+                </span>
+                <span class="waitlist-role-item">
+                  <input type="radio" class="waitlist-role-input" id="roleManager" name="role" value="Manager" required />
+                  <label for="roleManager" class="waitlist-role-pill">Manager</label>
+                </span>
+                <span class="waitlist-role-item">
+                  <input type="radio" class="waitlist-role-input" id="roleCarer" name="role" value="Carer" required />
+                  <label for="roleCarer" class="waitlist-role-pill">Carer</label>
+                </span>
+                <span class="waitlist-role-item">
+                  <input type="radio" class="waitlist-role-input" id="roleOther" name="role" value="Other" required />
+                  <label for="roleOther" class="waitlist-role-pill">Other</label>
+                </span>
+              </div>
+              <span class="waitlist-field-error" id="waitlistRoleError" role="alert" hidden></span>
             </div>
 
             <div class="waitlist-field">
@@ -1096,12 +1136,24 @@
             <div class="waitlist-error" id="waitlistError" role="alert" hidden></div>
 
             <button type="submit" class="btn btn-large" id="waitlistSubmitBtn">
-              Join the waiting list
+              <span class="waitlist-btn-spinner" aria-hidden="true"></span>
+              <span class="waitlist-btn-label">Join the waiting list</span>
             </button>
           </form>
         </div>
 
         <div id="waitlistSuccessPanel" hidden>
+          <svg class="waitlist-success-icon" viewBox="0 0 52 52" width="56" height="56" aria-hidden="true">
+            <circle class="wl-check-circle" cx="26" cy="26" r="23" fill="none" stroke-width="2.5" />
+            <path
+              class="wl-check-mark"
+              fill="none"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 27l7.5 7.5L37 18"
+            />
+          </svg>
           <h3>Thanks, <span id="waitlistSuccessName"></span> — you're on the list.</h3>
           <p>Check your email for a confirmation. We'll be in touch.</p>
           <button type="button" class="btn btn-large" data-waitlist-close>
@@ -1177,7 +1229,7 @@
             <h5>Company</h5>
             <ul>
               <li><a href="/about.html">About</a></li>
-              <li><a href="mailto:hello@bryndeli.co.uk">Contact</a></li>
+              <li><a href="/contact.html">Contact</a></li>
               <li>
                 <a
                   href="mailto:hello@bryndeli.co.uk?subject=Compliance%20enquiry"
@@ -1281,7 +1333,86 @@
         const waitlistSubmitBtn = document.getElementById(
           "waitlistSubmitBtn",
         );
+        const waitlistSubmitLabel = waitlistSubmitBtn.querySelector(
+          ".waitlist-btn-label",
+        );
         const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        const nameInput = document.getElementById("waitlistName");
+        const emailInput = document.getElementById("waitlistEmail");
+        const serviceInput = document.getElementById("waitlistServiceName");
+        const roleInputs = Array.from(
+          document.querySelectorAll(".waitlist-role-input"),
+        );
+
+        const textFields = [
+          {
+            wrap: document.getElementById("waitlistNameField"),
+            input: nameInput,
+            errorEl: document.getElementById("waitlistNameError"),
+            validate: (v) => (v.trim() ? "" : "Please enter your name."),
+          },
+          {
+            wrap: document.getElementById("waitlistEmailField"),
+            input: emailInput,
+            errorEl: document.getElementById("waitlistEmailError"),
+            validate: (v) => {
+              if (!v.trim()) return "Please enter your email.";
+              return emailRe.test(v.trim())
+                ? ""
+                : "Please enter a valid email address.";
+            },
+          },
+          {
+            wrap: document.getElementById("waitlistServiceNameField"),
+            input: serviceInput,
+            errorEl: document.getElementById("waitlistServiceNameError"),
+            validate: (v) =>
+              v.trim() ? "" : "Please enter your service name.",
+          },
+        ];
+
+        const roleWrap = document.getElementById("waitlistRoleField");
+        const roleError = document.getElementById("waitlistRoleError");
+
+        function setFieldError(wrap, errorEl, message) {
+          if (message) {
+            wrap.classList.add("has-error");
+            errorEl.textContent = message;
+            errorEl.hidden = false;
+          } else {
+            wrap.classList.remove("has-error");
+            errorEl.hidden = true;
+            errorEl.textContent = "";
+          }
+        }
+
+        function validateTextField(field) {
+          const message = field.validate(field.input.value);
+          setFieldError(field.wrap, field.errorEl, message);
+          return !message;
+        }
+
+        function validateRole() {
+          const message = roleInputs.some((r) => r.checked)
+            ? ""
+            : "Please select your role.";
+          setFieldError(roleWrap, roleError, message);
+          return !message;
+        }
+
+        textFields.forEach((field) => {
+          field.input.addEventListener("blur", () => validateTextField(field));
+          field.input.addEventListener("input", () => {
+            if (field.wrap.classList.contains("has-error")) {
+              validateTextField(field);
+            }
+          });
+        });
+
+        roleInputs.forEach((input) => {
+          input.addEventListener("change", validateRole);
+        });
 
         document.querySelectorAll("[data-waitlist-open]").forEach((btn) => {
           btn.addEventListener("click", () => waitlistModal.showModal());
@@ -1300,6 +1431,10 @@
           waitlistSuccessPanel.hidden = true;
           waitlistForm.reset();
           waitlistError.hidden = true;
+          textFields.forEach((field) =>
+            setFieldError(field.wrap, field.errorEl, ""),
+          );
+          setFieldError(roleWrap, roleError, "");
         });
 
         waitlistForm.addEventListener("submit", async (e) => {
@@ -1314,20 +1449,28 @@
           const interest = String(data.get("interest") || "").trim();
           const website = String(data.get("website") || "");
 
-          if (!name || !email || !serviceName || !role) {
-            waitlistError.textContent =
-              "Please fill in your name, email, service name, and role.";
-            waitlistError.hidden = false;
-            return;
-          }
-          if (!emailRe.test(email)) {
-            waitlistError.textContent = "Please enter a valid email address.";
-            waitlistError.hidden = false;
+          const fieldsValid = textFields
+            .map((field) => validateTextField(field))
+            .every(Boolean);
+          const roleValid = validateRole();
+
+          if (!fieldsValid || !roleValid) {
+            const firstInvalid = waitlistForm.querySelector(".has-error");
+            if (firstInvalid) {
+              const focusable = firstInvalid.querySelector(
+                "input, textarea, select",
+              );
+              if (focusable) focusable.focus();
+            }
+            waitlistForm.classList.remove("waitlist-shake");
+            void waitlistForm.offsetWidth;
+            waitlistForm.classList.add("waitlist-shake");
             return;
           }
 
           waitlistSubmitBtn.disabled = true;
-          waitlistSubmitBtn.textContent = "Joining…";
+          waitlistSubmitBtn.classList.add("is-loading");
+          waitlistSubmitLabel.textContent = "Joining…";
 
           try {
             const res = await fetch("/api/waitlist", {
@@ -1359,7 +1502,14 @@
             waitlistError.hidden = false;
           } finally {
             waitlistSubmitBtn.disabled = false;
-            waitlistSubmitBtn.textContent = "Join the waiting list";
+            waitlistSubmitBtn.classList.remove("is-loading");
+            waitlistSubmitLabel.textContent = "Join the waiting list";
+          }
+        });
+
+        waitlistForm.addEventListener("animationend", (e) => {
+          if (e.animationName === "wlShake") {
+            waitlistForm.classList.remove("waitlist-shake");
           }
         });
       }

@@ -1314,6 +1314,7 @@ h2 em {
 }
 
 .waitlist-modal {
+  --field-bg: #FAF7F1;
   position: fixed;
   inset: 0;
   margin: auto;
@@ -1326,7 +1327,16 @@ h2 em {
   background: white;
   color: var(--bark);
   box-shadow: var(--shadow-card-strong);
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule-strong) transparent;
 }
+.waitlist-modal::-webkit-scrollbar { width: 6px; }
+.waitlist-modal::-webkit-scrollbar-track { background: transparent; }
+.waitlist-modal::-webkit-scrollbar-thumb {
+  background: var(--rule-strong);
+  border-radius: 999px;
+}
+.waitlist-modal::-webkit-scrollbar-thumb:hover { background: var(--pine-soft); }
 .waitlist-modal::backdrop {
   background: rgba(42, 37, 32, 0.5);
   backdrop-filter: blur(2px);
@@ -1351,6 +1361,16 @@ h2 em {
 }
 .waitlist-modal-close:hover { background: var(--pine); color: var(--oat); border-color: var(--pine); }
 
+.waitlist-modal-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
 #waitlistFormPanel h3,
 #waitlistSuccessPanel h3 {
   font-family: var(--serif);
@@ -1368,8 +1388,11 @@ h2 em {
 }
 
 #waitlistForm { display: flex; flex-direction: column; gap: 18px; }
+#waitlistForm.waitlist-shake { animation: wlShake 0.4s var(--ease); }
+
 .waitlist-field { display: flex; flex-direction: column; gap: 6px; }
-.waitlist-field label {
+.waitlist-field label,
+.waitlist-field-label {
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.08em;
@@ -1382,23 +1405,100 @@ h2 em {
 .waitlist-field input,
 .waitlist-field select,
 .waitlist-field textarea {
+  width: 100%;
   font-family: var(--sans);
   font-size: 15px;
   color: var(--bark);
-  background: var(--oat-warm);
+  background: var(--field-bg);
   border: 1px solid var(--rule-strong);
   border-radius: var(--radius-sm);
   padding: 12px 14px;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: inset 0 1px 2px rgba(42, 37, 32, 0.035);
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.waitlist-field input:hover,
+.waitlist-field select:hover,
+.waitlist-field textarea:hover {
+  border-color: var(--pine-soft);
 }
 .waitlist-field input:focus,
 .waitlist-field select:focus,
 .waitlist-field textarea:focus {
   outline: none;
+  background: white;
   border-color: var(--pine);
   box-shadow: 0 0 0 3px rgba(47, 93, 78, 0.14);
 }
 .waitlist-field textarea { resize: vertical; min-height: 68px; }
+
+/* Leading icon inside inputs */
+.waitlist-input { position: relative; }
+.waitlist-input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--pine-soft);
+  pointer-events: none;
+  transition: color 0.2s;
+}
+.waitlist-input input { padding-left: 40px; }
+
+/* Inline field errors */
+.waitlist-field-error {
+  font-size: 12.5px;
+  color: var(--terracotta-deep);
+}
+.waitlist-field.has-error input,
+.waitlist-field.has-error select,
+.waitlist-field.has-error textarea {
+  border-color: var(--terracotta);
+  background: rgba(201, 97, 74, 0.05);
+}
+.waitlist-field.has-error input:focus,
+.waitlist-field.has-error textarea:focus {
+  box-shadow: 0 0 0 3px rgba(201, 97, 74, 0.14);
+}
+.waitlist-field.has-error .waitlist-input-icon { color: var(--terracotta); }
+
+/* Role — segmented pill selector */
+.waitlist-role-group { display: flex; flex-wrap: wrap; gap: 8px; }
+.waitlist-role-item { position: relative; }
+.waitlist-role-input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.waitlist-role-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--rule-strong);
+  background: var(--field-bg);
+  color: var(--bark-soft);
+  font-family: var(--sans);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  user-select: none;
+}
+.waitlist-role-pill:hover { border-color: var(--pine); color: var(--pine-deep); background: white; }
+.waitlist-role-input:checked + .waitlist-role-pill {
+  background: var(--pine);
+  border-color: var(--pine);
+  color: var(--oat);
+}
+.waitlist-role-input:focus-visible + .waitlist-role-pill {
+  outline: 2px solid var(--pine);
+  outline-offset: 2px;
+}
+.waitlist-field.has-error .waitlist-role-pill { border-color: var(--terracotta); }
 
 .waitlist-honeypot {
   position: absolute;
@@ -1419,7 +1519,50 @@ h2 em {
 
 #waitlistForm .btn,
 #waitlistSuccessPanel .btn { width: 100%; justify-content: center; }
+
+/* Submit button loading spinner */
+.waitlist-btn-spinner {
+  display: none;
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(248, 237, 224, 0.35);
+  border-top-color: var(--oat);
+  border-radius: 50%;
+  animation: wlSpin 0.7s linear infinite;
+}
+#waitlistSubmitBtn.is-loading { cursor: progress; }
+#waitlistSubmitBtn.is-loading .waitlist-btn-spinner { display: inline-block; }
+
+#waitlistSuccessPanel { text-align: center; }
 #waitlistSuccessPanel p { color: var(--bark-soft); margin-bottom: 28px; }
+
+.waitlist-success-icon { display: block; margin: 0 auto 20px; }
+.wl-check-circle {
+  stroke: var(--pine-deep);
+  stroke-dasharray: 145;
+  stroke-dashoffset: 145;
+  animation: wlDrawCircle 0.5s var(--ease) forwards;
+}
+.wl-check-mark {
+  stroke: var(--pine-deep);
+  stroke-dasharray: 34;
+  stroke-dashoffset: 34;
+  animation: wlDrawCheck 0.35s var(--ease) 0.4s forwards;
+}
+
+@keyframes wlSpin { to { transform: rotate(360deg); } }
+@keyframes wlDrawCircle { to { stroke-dashoffset: 0; } }
+@keyframes wlDrawCheck { to { stroke-dashoffset: 0; } }
+@keyframes wlShake {
+  10%, 90% { transform: translateX(-1px); }
+  20%, 80% { transform: translateX(2px); }
+  30%, 50%, 70% { transform: translateX(-4px); }
+  40%, 60% { transform: translateX(4px); }
+}
+@keyframes wlSlideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
 
 
 /* ============= CTA ============= */
@@ -1604,7 +1747,30 @@ h2 em {
   .waitlist { padding: 64px 0 48px; }
   .waitlist p { font-size: 16px; margin-bottom: 28px; }
   .waitlist .btn { width: 100%; justify-content: center; }
-  .waitlist-modal { padding: 24px 20px; border-radius: var(--radius-md); }
+
+  /* Bottom sheet on small screens instead of a centered dialog */
+  .waitlist-modal {
+    inset: auto 0 0 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: min(88vh, 720px);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: 30px 20px 24px;
+  }
+  .waitlist-modal[open] { animation: wlSlideUp 0.35s var(--ease) both; }
+  .waitlist-modal::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--rule-strong);
+  }
+  .waitlist-modal-close { top: 18px; right: 16px; }
 }
 
 /* Very small phones */
