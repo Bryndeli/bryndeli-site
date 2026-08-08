@@ -1038,86 +1038,67 @@
 
             <div class="waitlist-field" id="waitlistNameField">
               <label for="waitlistName">Name</label>
-              <div class="waitlist-input">
-                <svg class="waitlist-input-icon" viewBox="0 0 20 20" aria-hidden="true">
-                  <circle cx="10" cy="6.5" r="3.25" stroke="currentColor" stroke-width="1.5" fill="none" />
-                  <path d="M3.5 17c0-3.5 3-5.75 6.5-5.75s6.5 2.25 6.5 5.75" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" />
-                </svg>
-                <input
-                  type="text"
-                  id="waitlistName"
-                  name="name"
-                  autocomplete="name"
-                  aria-describedby="waitlistNameError"
-                  required
-                />
-              </div>
+              <input
+                type="text"
+                id="waitlistName"
+                name="name"
+                autocomplete="name"
+                aria-describedby="waitlistNameError"
+                required
+              />
               <span class="waitlist-field-error" id="waitlistNameError" role="alert" hidden></span>
             </div>
 
             <div class="waitlist-field" id="waitlistEmailField">
               <label for="waitlistEmail">Email</label>
-              <div class="waitlist-input">
-                <svg class="waitlist-input-icon" viewBox="0 0 20 20" aria-hidden="true">
-                  <rect x="2.5" y="4.5" width="15" height="11" rx="2" stroke="currentColor" stroke-width="1.5" fill="none" />
-                  <path d="M3.5 5.5l6.5 5 6.5-5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <input
-                  type="email"
-                  id="waitlistEmail"
-                  name="email"
-                  autocomplete="email"
-                  aria-describedby="waitlistEmailError"
-                  required
-                />
-              </div>
+              <input
+                type="email"
+                id="waitlistEmail"
+                name="email"
+                autocomplete="email"
+                aria-describedby="waitlistEmailError"
+                required
+              />
               <span class="waitlist-field-error" id="waitlistEmailError" role="alert" hidden></span>
             </div>
 
             <div class="waitlist-field" id="waitlistServiceNameField">
               <label for="waitlistServiceName">Service name</label>
-              <div class="waitlist-input">
-                <svg class="waitlist-input-icon" viewBox="0 0 20 20" aria-hidden="true">
-                  <rect x="3" y="7.5" width="14" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none" />
-                  <path d="M7 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5" stroke="currentColor" stroke-width="1.5" fill="none" />
-                  <path d="M3 11.5h14" stroke="currentColor" stroke-width="1.5" />
-                </svg>
-                <input
-                  type="text"
-                  id="waitlistServiceName"
-                  name="serviceName"
-                  autocomplete="organization"
-                  aria-describedby="waitlistServiceNameError"
-                  required
-                />
-              </div>
+              <input
+                type="text"
+                id="waitlistServiceName"
+                name="serviceName"
+                autocomplete="organization"
+                aria-describedby="waitlistServiceNameError"
+                required
+              />
               <span class="waitlist-field-error" id="waitlistServiceNameError" role="alert" hidden></span>
             </div>
 
             <div class="waitlist-field" id="waitlistRoleField">
-              <span class="waitlist-field-label" id="waitlistRoleLabel">Role</span>
-              <div
-                class="waitlist-role-group"
-                role="radiogroup"
-                aria-labelledby="waitlistRoleLabel"
-                aria-describedby="waitlistRoleError"
-              >
-                <span class="waitlist-role-item">
-                  <input type="radio" class="waitlist-role-input" id="roleOwner" name="role" value="Owner" required />
-                  <label for="roleOwner" class="waitlist-role-pill">Owner</label>
-                </span>
-                <span class="waitlist-role-item">
-                  <input type="radio" class="waitlist-role-input" id="roleManager" name="role" value="Manager" required />
-                  <label for="roleManager" class="waitlist-role-pill">Manager</label>
-                </span>
-                <span class="waitlist-role-item">
-                  <input type="radio" class="waitlist-role-input" id="roleCarer" name="role" value="Carer" required />
-                  <label for="roleCarer" class="waitlist-role-pill">Carer</label>
-                </span>
-                <span class="waitlist-role-item">
-                  <input type="radio" class="waitlist-role-input" id="roleOther" name="role" value="Other" required />
-                  <label for="roleOther" class="waitlist-role-pill">Other</label>
-                </span>
+              <label id="waitlistRoleLabel">Role</label>
+              <div class="waitlist-select">
+                <button
+                  type="button"
+                  class="waitlist-select-trigger"
+                  id="waitlistRoleTrigger"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  aria-labelledby="waitlistRoleLabel waitlistRoleTrigger"
+                  aria-describedby="waitlistRoleError"
+                >
+                  <span class="waitlist-select-value is-placeholder">Select your role</span>
+                  <svg class="waitlist-select-chevron" viewBox="0 0 12 8" width="11" height="8" aria-hidden="true">
+                    <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <ul class="waitlist-select-menu" role="listbox" id="waitlistRoleMenu" aria-labelledby="waitlistRoleLabel" hidden>
+                  <li role="option" tabindex="-1" data-value="Owner">Owner</li>
+                  <li role="option" tabindex="-1" data-value="Manager">Manager</li>
+                  <li role="option" tabindex="-1" data-value="Carer">Carer</li>
+                  <li role="option" tabindex="-1" data-value="Other">Other</li>
+                </ul>
+                <input type="hidden" name="role" id="waitlistRole" />
               </div>
               <span class="waitlist-field-error" id="waitlistRoleError" role="alert" hidden></span>
             </div>
@@ -1143,19 +1124,9 @@
         </div>
 
         <div id="waitlistSuccessPanel" hidden>
-          <svg class="waitlist-success-icon" viewBox="0 0 52 52" width="56" height="56" aria-hidden="true">
-            <circle class="wl-check-circle" cx="26" cy="26" r="23" fill="none" stroke-width="2.5" />
-            <path
-              class="wl-check-mark"
-              fill="none"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15 27l7.5 7.5L37 18"
-            />
-          </svg>
-          <h3>Thanks, <span id="waitlistSuccessName"></span> — you're on the list.</h3>
-          <p>Check your email for a confirmation. We'll be in touch.</p>
+          <div class="waitlist-success-eyebrow">You're on the list</div>
+          <h3>Thanks, <em id="waitlistSuccessName"></em>.</h3>
+          <p>I've got your details — check your inbox for a confirmation, and expect to hear from me directly, not a support queue.</p>
           <button type="button" class="btn btn-large" data-waitlist-close>
             Close
           </button>
@@ -1341,8 +1312,13 @@
         const nameInput = document.getElementById("waitlistName");
         const emailInput = document.getElementById("waitlistEmail");
         const serviceInput = document.getElementById("waitlistServiceName");
-        const roleInputs = Array.from(
-          document.querySelectorAll(".waitlist-role-input"),
+        const roleFieldWrap = document.getElementById("waitlistRoleField");
+        const roleTrigger = document.getElementById("waitlistRoleTrigger");
+        const roleMenu = document.getElementById("waitlistRoleMenu");
+        const roleValueEl = roleTrigger.querySelector(".waitlist-select-value");
+        const roleHiddenInput = document.getElementById("waitlistRole");
+        const roleOptions = Array.from(
+          roleMenu.querySelectorAll('[role="option"]'),
         );
 
         const textFields = [
@@ -1372,8 +1348,7 @@
           },
         ];
 
-        const roleWrap = document.getElementById("waitlistRoleField");
-        const roleError = document.getElementById("waitlistRoleError");
+        const roleErrorEl = document.getElementById("waitlistRoleError");
 
         function setFieldError(wrap, errorEl, message) {
           if (message) {
@@ -1394,12 +1369,74 @@
         }
 
         function validateRole() {
-          const message = roleInputs.some((r) => r.checked)
-            ? ""
-            : "Please select your role.";
-          setFieldError(roleWrap, roleError, message);
+          const message = roleHiddenInput.value ? "" : "Please select your role.";
+          setFieldError(roleFieldWrap, roleErrorEl, message);
           return !message;
         }
+
+        // ============= CUSTOM ROLE DROPDOWN =============
+        function openRoleMenu() {
+          roleMenu.hidden = false;
+          roleTrigger.setAttribute("aria-expanded", "true");
+          const current =
+            roleOptions.find((o) => o.dataset.value === roleHiddenInput.value) ||
+            roleOptions[0];
+          current.focus();
+        }
+
+        function closeRoleMenu() {
+          roleMenu.hidden = true;
+          roleTrigger.setAttribute("aria-expanded", "false");
+        }
+
+        function selectRole(option) {
+          roleHiddenInput.value = option.dataset.value;
+          roleValueEl.textContent = option.dataset.value;
+          roleValueEl.classList.remove("is-placeholder");
+          roleOptions.forEach((o) =>
+            o.setAttribute("aria-selected", String(o === option)),
+          );
+          closeRoleMenu();
+          roleTrigger.focus();
+          if (roleFieldWrap.classList.contains("has-error")) validateRole();
+        }
+
+        roleTrigger.addEventListener("click", () => {
+          if (roleMenu.hidden) openRoleMenu();
+          else closeRoleMenu();
+        });
+
+        roleTrigger.addEventListener("blur", () => {
+          if (roleFieldWrap.classList.contains("has-error")) validateRole();
+        });
+
+        roleOptions.forEach((option) => {
+          option.addEventListener("click", () => selectRole(option));
+        });
+
+        roleMenu.addEventListener("keydown", (e) => {
+          const idx = roleOptions.indexOf(document.activeElement);
+          if (e.key === "ArrowDown") {
+            e.preventDefault();
+            roleOptions[Math.min(idx + 1, roleOptions.length - 1)].focus();
+          } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            roleOptions[Math.max(idx - 1, 0)].focus();
+          } else if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            selectRole(document.activeElement);
+          } else if (e.key === "Escape") {
+            e.preventDefault();
+            closeRoleMenu();
+            roleTrigger.focus();
+          } else if (e.key === "Tab") {
+            closeRoleMenu();
+          }
+        });
+
+        document.addEventListener("click", (e) => {
+          if (!roleFieldWrap.contains(e.target)) closeRoleMenu();
+        });
 
         textFields.forEach((field) => {
           field.input.addEventListener("blur", () => validateTextField(field));
@@ -1408,10 +1445,11 @@
               validateTextField(field);
             }
           });
-        });
-
-        roleInputs.forEach((input) => {
-          input.addEventListener("change", validateRole);
+          field.input.addEventListener("change", () => {
+            if (field.wrap.classList.contains("has-error")) {
+              validateTextField(field);
+            }
+          });
         });
 
         document.querySelectorAll("[data-waitlist-open]").forEach((btn) => {
@@ -1434,7 +1472,11 @@
           textFields.forEach((field) =>
             setFieldError(field.wrap, field.errorEl, ""),
           );
-          setFieldError(roleWrap, roleError, "");
+          setFieldError(roleFieldWrap, roleErrorEl, "");
+          closeRoleMenu();
+          roleValueEl.textContent = "Select your role";
+          roleValueEl.classList.add("is-placeholder");
+          roleOptions.forEach((o) => o.setAttribute("aria-selected", "false"));
         });
 
         waitlistForm.addEventListener("submit", async (e) => {
@@ -1458,7 +1500,7 @@
             const firstInvalid = waitlistForm.querySelector(".has-error");
             if (firstInvalid) {
               const focusable = firstInvalid.querySelector(
-                "input, textarea, select",
+                "input, textarea, select, button",
               );
               if (focusable) focusable.focus();
             }

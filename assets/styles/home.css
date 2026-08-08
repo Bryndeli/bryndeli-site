@@ -1314,7 +1314,6 @@ h2 em {
 }
 
 .waitlist-modal {
-  --field-bg: #FAF7F1;
   position: fixed;
   inset: 0;
   margin: auto;
@@ -1402,49 +1401,102 @@ h2 em {
 }
 .waitlist-optional { text-transform: none; letter-spacing: 0; color: var(--bark-soft); }
 
+/* Underline fields — a considered, letter-like feel rather than a boxed
+   SaaS input; ties to the serif/mono type system instead of hiding it. */
 .waitlist-field input,
-.waitlist-field select,
 .waitlist-field textarea {
   width: 100%;
   font-family: var(--sans);
-  font-size: 15px;
+  font-size: 15.5px;
   color: var(--bark);
-  background: var(--field-bg);
-  border: 1px solid var(--rule-strong);
-  border-radius: var(--radius-sm);
-  padding: 12px 14px;
-  box-shadow: inset 0 1px 2px rgba(42, 37, 32, 0.035);
-  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid var(--rule-strong);
+  border-radius: 0;
+  padding: 9px 1px;
+  transition: border-color 0.2s;
 }
 .waitlist-field input:hover,
-.waitlist-field select:hover,
 .waitlist-field textarea:hover {
-  border-color: var(--pine-soft);
+  border-bottom-color: var(--pine-soft);
 }
 .waitlist-field input:focus,
-.waitlist-field select:focus,
 .waitlist-field textarea:focus {
   outline: none;
-  background: white;
-  border-color: var(--pine);
-  box-shadow: 0 0 0 3px rgba(47, 93, 78, 0.14);
+  border-bottom-color: var(--pine);
 }
-.waitlist-field textarea { resize: vertical; min-height: 68px; }
+.waitlist-field textarea { resize: vertical; min-height: 60px; }
 
-/* Leading icon inside inputs */
-.waitlist-input { position: relative; }
-.waitlist-input-icon {
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
-  color: var(--pine-soft);
-  pointer-events: none;
-  transition: color 0.2s;
+/* Role — inline choices you "mark", like circling an answer on a paper
+   form, instead of a dropdown or a chip/pill control. */
+/* Role — a custom dropdown (button + floated menu), not the native
+   control's OS chrome, but still genuinely a dropdown. */
+.waitlist-select { position: relative; }
+.waitlist-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 15.5px;
+  color: var(--bark);
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid var(--rule-strong);
+  border-radius: 0;
+  padding: 9px 1px;
+  cursor: pointer;
+  transition: border-color 0.2s;
 }
-.waitlist-input input { padding-left: 40px; }
+.waitlist-select-trigger:hover { border-bottom-color: var(--pine-soft); }
+.waitlist-select-trigger:focus-visible,
+.waitlist-select-trigger[aria-expanded="true"] {
+  outline: none;
+  border-bottom-color: var(--pine);
+}
+.waitlist-select-value.is-placeholder { color: var(--bark-soft); }
+.waitlist-select-chevron {
+  color: var(--pine);
+  flex-shrink: 0;
+  transition: transform 0.2s var(--ease);
+}
+.waitlist-select-trigger[aria-expanded="true"] .waitlist-select-chevron { transform: rotate(180deg); }
+
+.waitlist-select-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 5;
+  list-style: none;
+  background: white;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card-strong);
+  padding: 6px;
+  animation: fadeUp 0.15s var(--ease) both;
+}
+.waitlist-select-menu li {
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--bark);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.waitlist-select-menu li:hover,
+.waitlist-select-menu li:focus {
+  outline: none;
+  background: rgba(42, 37, 32, 0.06);
+  color: var(--pine-deep);
+}
+.waitlist-select-menu li[aria-selected="true"] {
+  color: var(--pine-deep);
+  font-weight: 600;
+}
+.waitlist-field.has-error .waitlist-select-trigger { border-bottom-color: var(--terracotta); }
 
 /* Inline field errors */
 .waitlist-field-error {
@@ -1452,53 +1504,9 @@ h2 em {
   color: var(--terracotta-deep);
 }
 .waitlist-field.has-error input,
-.waitlist-field.has-error select,
 .waitlist-field.has-error textarea {
-  border-color: var(--terracotta);
-  background: rgba(201, 97, 74, 0.05);
+  border-bottom-color: var(--terracotta);
 }
-.waitlist-field.has-error input:focus,
-.waitlist-field.has-error textarea:focus {
-  box-shadow: 0 0 0 3px rgba(201, 97, 74, 0.14);
-}
-.waitlist-field.has-error .waitlist-input-icon { color: var(--terracotta); }
-
-/* Role — segmented pill selector */
-.waitlist-role-group { display: flex; flex-wrap: wrap; gap: 8px; }
-.waitlist-role-item { position: relative; }
-.waitlist-role-input {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  margin: 0;
-  cursor: pointer;
-}
-.waitlist-role-pill {
-  display: inline-flex;
-  align-items: center;
-  padding: 9px 16px;
-  border-radius: 999px;
-  border: 1px solid var(--rule-strong);
-  background: var(--field-bg);
-  color: var(--bark-soft);
-  font-family: var(--sans);
-  font-size: 13.5px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
-  user-select: none;
-}
-.waitlist-role-pill:hover { border-color: var(--pine); color: var(--pine-deep); background: white; }
-.waitlist-role-input:checked + .waitlist-role-pill {
-  background: var(--pine);
-  border-color: var(--pine);
-  color: var(--oat);
-}
-.waitlist-role-input:focus-visible + .waitlist-role-pill {
-  outline: 2px solid var(--pine);
-  outline-offset: 2px;
-}
-.waitlist-field.has-error .waitlist-role-pill { border-color: var(--terracotta); }
 
 .waitlist-honeypot {
   position: absolute;
@@ -1533,26 +1541,34 @@ h2 em {
 #waitlistSubmitBtn.is-loading { cursor: progress; }
 #waitlistSubmitBtn.is-loading .waitlist-btn-spinner { display: inline-block; }
 
-#waitlistSuccessPanel { text-align: center; }
-#waitlistSuccessPanel p { color: var(--bark-soft); margin-bottom: 28px; }
-
-.waitlist-success-icon { display: block; margin: 0 auto 20px; }
-.wl-check-circle {
-  stroke: var(--pine-deep);
-  stroke-dasharray: 145;
-  stroke-dashoffset: 145;
-  animation: wlDrawCircle 0.5s var(--ease) forwards;
+#waitlistSuccessPanel {
+  text-align: center;
+  padding: 8px 0 4px;
+  animation: fadeUp 0.4s var(--ease) both;
 }
-.wl-check-mark {
-  stroke: var(--pine-deep);
-  stroke-dasharray: 34;
-  stroke-dashoffset: 34;
-  animation: wlDrawCheck 0.35s var(--ease) 0.4s forwards;
+#waitlistSuccessPanel p {
+  color: var(--bark-soft);
+  max-width: 380px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+.waitlist-success-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+#waitlistSuccessPanel h3 em,
+#waitlistFormPanel h3 em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--terracotta);
 }
 
 @keyframes wlSpin { to { transform: rotate(360deg); } }
-@keyframes wlDrawCircle { to { stroke-dashoffset: 0; } }
-@keyframes wlDrawCheck { to { stroke-dashoffset: 0; } }
 @keyframes wlShake {
   10%, 90% { transform: translateX(-1px); }
   20%, 80% { transform: translateX(2px); }
