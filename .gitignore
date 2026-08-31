@@ -13,6 +13,7 @@ Icon
 *~
 .cursor/
 .windsurf/
+.claude/
 
 # Node (if you add tooling later)
 node_modules/
