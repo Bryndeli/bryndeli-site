@@ -40,6 +40,8 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
     <link rel="stylesheet" href="/assets/styles/base.css" />
     <link rel="stylesheet" href="/assets/styles/home.css" />
@@ -87,7 +89,9 @@
             <svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-3.6 3.6-6.5 8-6.5s8 2.9 8 6.5"/></svg>
             Sign in
           </a>
-          <a href="#demo" class="btn">Book a demo</a>
+          <!-- Calendly link widget begin -->
+          <a href="" class='btn' onclick="Calendly.initPopupWidget({url: 'https://calendly.com/olu-bryndeli/30min'});return false;">Book a demo</a>
+          <!-- Calendly link widget end -->
         </div>
         <button
           class="nav-toggle"
@@ -114,7 +118,7 @@
         <a href="/contact.html" data-mobile-nav>Contact</a>
         <a href="https://bryndeli.app" data-mobile-nav>Sign in</a>
         <a href="#demo" class="mobile-cta" data-mobile-nav
-          >Book a 15-min demo →</a
+          >Book a 30 min demo →</a
         >
       </div>
 
@@ -1140,9 +1144,10 @@
           look like yours — no slide deck, no sales pressure.
         </p>
         <div class="reveal delay-2">
-          <a href="mailto:hello@bryndeli.co.uk" class="btn btn-large"
-            >Book your demo <span class="arr">→</span></a
-          >
+           <!-- Calendly link widget begin -->
+          <a href="" class='btn btn-large' onclick="Calendly.initPopupWidget({url: 'https://calendly.com/olu-bryndeli/30min'});return false;">
+            Book a demo<span class="arr">→</span></a>
+          <!-- Calendly link widget end -->
         </div>
       </section>
 
