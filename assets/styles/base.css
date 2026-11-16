@@ -276,7 +276,9 @@ nav.scrolled {
 /* Lock background scroll while the mobile menu is open. The scroll container on
    mobile is usually <html>, so locking only <body> lets the page (and the sticky
    header) keep scrolling behind the overlay — lock the root element too. */
-body.menu-open { overflow: hidden; }
+/* Lock page scroll while the menu is open. Only <html> gets overflow:hidden:
+   putting it on <body> as well turns body into a scroll container and the
+   sticky nav (with the close button) scrolls out of view. */
 html:has(body.menu-open) { overflow: hidden; }
 
 /* ============= BUTTONS ============= */
