@@ -36,3 +36,6 @@ build/
 preview-*.png
 preview-*.jpg
 *.local
+
+# Archived old versions
+_archive/

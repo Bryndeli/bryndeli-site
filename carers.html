@@ -8,88 +8,87 @@
   <link rel="canonical" href="https://bryndeli.co.uk/carers">
   <meta property="og:title" content="Find care work that fits your life. | Bryndeli Match">
   <meta property="og:description" content="Tell us what you're looking for once. We'll introduce you to families, agencies and care homes nearby when something fits.">
+  <meta property="og:image" content="https://bryndeli.co.uk/assets/images/og-image.png">
   <meta property="og:url" content="https://bryndeli.co.uk/carers">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://bryndeli.co.uk/assets/images/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Find care work that fits your life. | Bryndeli Match">
   <meta name="twitter:description" content="Tell us what you're looking for once. We'll introduce you to families, agencies and care homes nearby when something fits.">
   <meta name="twitter:image" content="https://bryndeli.co.uk/assets/images/og-image.png">
-  <meta name="theme-color" content="#FAF7F2">
+  <meta name="theme-color" content="#F8EDE0">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
   <link rel="apple-touch-icon" href="/assets/images/app-icon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles/match-circle.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles/v2.css">
 </head>
 <body>
-  <header class="container site-header">
-    <a class="wordmark" href="/" aria-label="Bryndeli home"><span class="wordmark-name">Bryndeli</span><span class="wordmark-product">Match</span></a>
-    <nav class="main-nav" aria-label="Main">
-      <a href="/hire">Hiring? Find a carer</a>
-      <a class="button join-link" href="#join">Join free</a>
-    </nav>
+  <div class="progress" id="progress"></div>
+  <header class="nav" id="nav">
+    <div class="wrap nav-in">
+      <a class="logo" href="/" aria-label="Bryndeli home"><svg viewBox="0 0 200 200" aria-hidden="true"><circle class="ring-a" cx="100" cy="100" r="76" fill="none" stroke="#2F5D4E" stroke-width="11" stroke-linecap="round" stroke-dasharray="310 138"/><circle class="ring-b" cx="100" cy="100" r="48" fill="none" stroke="#2F5D4E" stroke-width="9" stroke-linecap="round" stroke-dasharray="206 88"/><circle class="core" cx="100" cy="100" r="17" fill="#C9614A"/></svg>bryndeli<span class="tag">Match</span></a>
+      <nav class="nav-links" aria-label="Main"><a href="/hire">Hiring? Find a carer</a><a class="cta join-link" href="#join">Join free</a></nav>
+    </div>
   </header>
   <main>
-    <section class="container hero hero-carers">
-      <div class="hero-copy">
-        <span class="badge">For carers · Telford and Shropshire</span>
-        <h1>Find care work that fits <em>your life.</em></h1>
-        <p class="lede">Tell us what you're looking for once. We'll introduce you to families, agencies and care homes nearby when something fits.</p>
-        <a class="button join-link" href="#join" style="align-self:flex-start">Join free in 2 minutes</a>
+    <section class="wrap hero solo">
+      <div>
+        <span class="eyebrow fade"><i></i>For carers · Telford and Shropshire</span>
+        <h1 data-split>Find care work that fits <em>your life.</em></h1>
+        <p class="lede fade" style="--d:900ms">Tell us what you're looking for once. We'll introduce you to families, agencies and care homes nearby when something fits.</p>
+        <div class="actions fade" style="--d:1050ms"><a class="btn join-link" data-magnet href="#join">Join free in 2 minutes <span class="arr">→</span></a></div>
       </div>
-      <aside class="promise-card">
-        <span class="eyebrow">Our promise to carers</span>
-        <p class="promise-quote">Always free. We will never ask you for money.</p>
-        <ul>
-          <li>No joining fees, no placement fees, no catches</li>
-          <li>We only contact you about roles that fit what you told us</li>
-          <li>You choose which introductions to accept</li>
-          <li>You can ask us to delete your details at any time</li>
-        </ul>
+      <aside class="promise fade" style="--d:500ms" data-tilt>
+        <span class="kicker">Our promise to carers</span>
+        <blockquote>Always free. We will never ask you for money.</blockquote>
+        <ul class="ticks"><li style="--k:0">No joining fees, no placement fees, no catches</li><li style="--k:1">We only contact you about roles that fit what you told us</li><li style="--k:2">You choose which introductions to accept</li><li style="--k:3">You can ask us to delete your details at any time</li></ul>
       </aside>
     </section>
-    <section class="band">
-      <div class="container band-inner">
-        <h2>How it works</h2>
-        <div class="card-grid">
-          <article class="step-card"><span class="step-number">1</span><h3>Tell us what you want</h3><p>Your area, the kind of work, your hours and your rate. It takes about two minutes.</p></article>
-          <article class="step-card"><span class="step-number">2</span><h3>Get checked once</h3><p>When a role fits, we check your ID, right to work and references, and confirm your DBS status, so you don't repeat it for every job.</p></article>
-          <article class="step-card"><span class="step-number">3</span><h3>Meet and decide</h3><p>We introduce you. You meet the family or employer and decide together if it's right.</p></article>
+
+    <section class="sec band">
+      <div class="wrap">
+        <p class="kicker rv">How it works</p>
+        <h2 class="rv" style="--rd:80ms">Four steps, then we do the legwork.</h2>
+        <div class="steps four rv"><article class="step"><span class="n">1</span><h3>Set up your profile</h3><p>Create your profile and upload your qualifications and training certificates, so employers can see what you can do.</p></article><article class="step"><span class="n">2</span><h3>Tell us what you want</h3><p>Your area, the kind of work, your hours and your rate. It takes about two minutes.</p></article><article class="step"><span class="n">3</span><h3>Get checked once</h3><p>When a role fits, we check your ID, right to work and references, and confirm your DBS status, so you don't repeat it for every job.</p></article><article class="step"><span class="n">4</span><h3>Meet and decide</h3><p>We introduce you. You meet the family or employer and decide together if it's right.</p></article></div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="wrap">
+        <p class="kicker rv">Roles</p>
+        <h2 class="rv" style="--rd:80ms">Work that fits <em>around you.</em></h2>
+        <div class="pills rv"><span style="--k:0">Private work for families</span><span style="--k:1">Agency shifts</span><span style="--k:2">Permanent roles</span><span style="--k:3">Personal assistant (PA)</span><span style="--k:4">Live in</span><span style="--k:5">Days, evenings, nights</span></div>
+      </div>
+    </section>
+
+    <section class="sec band">
+      <div class="wrap">
+        <p class="kicker rv">FAQ</p>
+        <h2 class="rv" style="--rd:80ms">Questions carers ask</h2>
+        <div class="faq"><details class="rv" style="--rd:0ms"><summary>Is it really free?</summary><p>Yes. Families and employers pay us when they hire. Carers never pay anything.</p></details><details class="rv" style="--rd:70ms"><summary>Do I need a DBS check?</summary><p>Most care roles need one. If yours isn't current, we'll explain how to get or update it before any introduction.</p></details><details class="rv" style="--rd:140ms"><summary>Can you sponsor my visa?</summary><p>We can't sponsor visas ourselves. If an employer we introduce you to can offer sponsorship, we'll tell you clearly before you apply.</p></details><details class="rv" style="--rd:210ms"><summary>Where do you work?</summary><p>We're starting in Telford and Shropshire. Join from anywhere and we'll let you know when we reach your area.</p></details></div>
+      </div>
+    </section>
+
+    <section id="join" class="sec">
+      <div class="wrap">
+        <div class="cta-panel rv">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><circle class="ring-a" cx="100" cy="100" r="76" fill="none" stroke-width="11" stroke-linecap="round" stroke-dasharray="310 138"/><circle class="ring-b" cx="100" cy="100" r="48" fill="none" stroke-width="9" stroke-linecap="round" stroke-dasharray="206 88"/><circle class="core" cx="100" cy="100" r="17"/></svg>
+          <h2>Ready when you are</h2>
+          <p>Two minutes, no documents, always free.</p>
+          <a class="btn join-link" data-magnet href="#join">Join Bryndeli Match <span class="arr">→</span></a>
+          <a class="link" href="/privacy#carers">How we use your information</a>
         </div>
       </div>
-    </section>
-    <section class="roles">
-      <h2>Work that fits around you</h2>
-      <div class="role-pills">
-        <span>Private work for families</span><span>Agency shifts</span><span>Permanent roles</span><span>Personal assistant (PA)</span><span>Live in</span><span>Days, evenings, nights</span>
-      </div>
-    </section>
-    <section class="band">
-      <div class="container band-inner">
-        <h2>Questions carers ask</h2>
-        <div class="faq-list">
-          <div><h3>Is it really free?</h3><p>Yes. Families and employers pay us when they hire. Carers never pay anything.</p></div>
-          <div><h3>Do I need a DBS check?</h3><p>Most care roles need one. If yours isn't current, we'll explain how to get or update it before any introduction.</p></div>
-          <div><h3>Can you sponsor my visa?</h3><p>We can't sponsor visas ourselves. If an employer we introduce you to can offer sponsorship, we'll tell you clearly before you apply.</p></div>
-          <div><h3>Where do you work?</h3><p>We're starting in Telford and Shropshire. Join from anywhere and we'll let you know when we reach your area.</p></div>
-        </div>
-      </div>
-    </section>
-    <section id="join" class="join-section">
-      <h2>Ready when you are</h2>
-      <p>Two minutes, no documents, always free.</p>
-      <a class="button join-link" href="#join">Join Bryndeli Match</a>
-      <a href="/privacy#carers">How we use your information</a>
     </section>
   </main>
-  <footer class="site-footer">
-    <div class="container footer-inner">
+  <footer>
+    <div class="wrap foot">
       <span>© 2026 Bryndeli Ltd</span>
       <span><a href="/">Bryndeli</a> · <a href="/hire">Hire a carer</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
     </div>
   </footer>
+  <script src="/assets/js/v2.js"></script>
   <script>
     fetch("/api/config").then(r => r.json()).then(({ carerSignupUrl }) => {
       if (!carerSignupUrl) return;
