@@ -1,4 +1,37 @@
-# Airtable setup: Bryndeli for Families waitlist
+# Airtable setup
+
+## Bryndeli Match hire requests
+
+Create a table in the Bryndeli base with these fields:
+
+| Field | Airtable type | Notes |
+| --- | --- | --- |
+| `Hiring as` | Single line text | `A family or individual` or `An agency or care home`. |
+| `Postcode area` | Single line text | Max 20 characters. |
+| `Help needed` | Long text | Max 1000 characters. |
+| `Email` | Email | Max 254 characters. |
+| `Consent` | Checkbox | Required. |
+| `Submitted at` | Date with time | ISO 8601 timestamp. |
+| `UTM source` | Single line text | Max 200 characters. |
+| `UTM medium` | Single line text | Max 200 characters. |
+| `UTM campaign` | Single line text | Max 200 characters. |
+| `UTM content` | Single line text | Max 200 characters. |
+
+Environment variables:
+
+| Variable | Purpose |
+| --- | --- |
+| `AIRTABLE_TOKEN` | Airtable personal access token with write access to the base. |
+| `AIRTABLE_BASE_ID` | Airtable base ID. |
+| `AIRTABLE_HIRE_TABLE` | Hire requests table name or ID. |
+
+If these variables are not set, `/hire` shows `Requests open soon` and no record is submitted.
+
+## Bryndeli Match carer sign-up
+
+Set `CARER_SIGNUP_URL` in Vercel to the external carer sign-up form URL. If it is unset, Join buttons on `/carers` scroll to `#join`.
+
+## Bryndeli Circle / Families waitlist
 
 Create a table in your base with these fields. Names must match exactly. They are defined in one constant, `FIELD`, at the top of [api/families-waitlist.js](api/families-waitlist.js), so you can rename them there.
 

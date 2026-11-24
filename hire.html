@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Find a carer you can trust, close to home. | Bryndeli Match</title>
+  <meta name="description" content="Tell us what help you need. We shortlist local carers who've already been checked, and you choose who's right.">
+  <link rel="canonical" href="https://bryndeli.co.uk/hire">
+  <meta property="og:title" content="Find a carer you can trust, close to home. | Bryndeli Match">
+  <meta property="og:description" content="Tell us what help you need. We shortlist local carers who've already been checked, and you choose who's right.">
+  <meta property="og:url" content="https://bryndeli.co.uk/hire">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://bryndeli.co.uk/assets/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Find a carer you can trust, close to home. | Bryndeli Match">
+  <meta name="twitter:description" content="Tell us what help you need. We shortlist local carers who've already been checked, and you choose who's right.">
+  <meta name="twitter:image" content="https://bryndeli.co.uk/assets/images/og-image.png">
+  <meta name="theme-color" content="#FAF7F2">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/images/app-icon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles/match-circle.css">
+</head>
+<body>
+  <header class="container site-header">
+    <a class="wordmark" href="/" aria-label="Bryndeli home"><span class="wordmark-name">Bryndeli</span><span class="wordmark-product">Match</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="/carers">Looking for care work?</a>
+      <a class="button" href="#request">Find a carer</a>
+    </nav>
+  </header>
+  <main>
+    <section class="container hero">
+      <div class="hero-copy">
+        <span class="badge">Telford and Shropshire</span>
+        <h1>Find a carer you can <em>trust,</em> close to home.</h1>
+        <p class="lede">Tell us what help you need. We shortlist local carers who've already been checked, and you choose who's right.</p>
+        <a class="button" href="#request" style="align-self:flex-start">Tell us what you need</a>
+      </div>
+    </section>
+    <section class="container audience-grid">
+      <article class="audience-card">
+        <h2>For families</h2>
+        <p>Hiring a carer or PA privately, paying yourself or through direct payments.</p>
+        <ul><li>Regular visits, live in care or a few hours a week</li><li>Carers who live nearby, so cover is easier</li><li>Help with contracts and paperwork if you're new to employing someone</li></ul>
+      </article>
+      <article class="audience-card pine">
+        <h2>For agencies and care homes</h2>
+        <p>Filling shifts or permanent roles with local carers.</p>
+        <ul><li>A shortlist of carers looking for work in your area</li><li>Checks done before introduction, so onboarding is quicker</li><li>No recruitment agency mark up</li></ul>
+        <a href="/privacy#providers" style="color:#CFE3D8;font-size:14px">How we use your information</a>
+      </article>
+    </section>
+    <section class="band">
+      <div class="container band-inner">
+        <h2>How it works</h2>
+        <div class="card-grid">
+          <article class="step-card"><span class="step-number">1</span><h3>Tell us what help you need</h3><p>The tasks, the hours and where. Plain words are fine. No medical details needed.</p></article>
+          <article class="step-card"><span class="step-number">2</span><h3>Get a shortlist</h3><p>We send you two or three checked carers who fit, with why we think each is a good match.</p></article>
+          <article class="step-card"><span class="step-number">3</span><h3>Meet and choose</h3><p>You meet them and decide. You only pay when you hire.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="container check-layout">
+      <div class="check-copy"><h2>What we check</h2><p>We check ID, right to work and references, and confirm DBS status before any introduction.</p></div>
+      <ul class="check-list"><li>Photo ID</li><li>Right to work in the UK</li><li>DBS status confirmed</li><li>References</li><li>A conversation with us</li></ul>
+    </section>
+    <section class="pricing-band">
+      <div class="container pricing-layout">
+        <div class="pricing-copy"><h2>Simple pricing</h2><p>No sign up fee. No charge for a shortlist. You pay one introduction fee only when you hire.</p></div>
+        <div class="price-card"><span>Introduction fee</span><strong>[YOUR PRICE]</strong><!-- TODO: confirm and replace the introduction fee placeholder --> <p>per carer hired. Agencies and care homes: ask about regular hiring.</p></div>
+      </div>
+    </section>
+    <section id="request" class="form-section">
+      <h2>Tell us what you need</h2>
+      <form id="hire-form">
+        <fieldset>
+          <legend>I'm hiring as</legend>
+          <label class="radio-label"><input type="radio" name="hiringAs" value="A family or individual" required> A family or individual</label>
+          <label class="radio-label"><input type="radio" name="hiringAs" value="An agency or care home" required> An agency or care home</label>
+        </fieldset>
+        <div class="field"><label for="postcode">Postcode area</label><input id="postcode" name="postcode" type="text" maxlength="20" placeholder="For example TF4" required></div>
+        <div class="field"><label for="help">What help is needed, and when?</label><textarea id="help" name="help" rows="4" maxlength="1000" placeholder="For example: help getting up and dressed, weekday mornings, 7 to 9am" required></textarea></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" maxlength="254" required></div>
+        <label class="consent-label"><input type="checkbox" name="consent" required> I'm happy to be contacted about carers who fit. <a href="/privacy#hire">How we use your information</a></label>
+        <div class="honeypot" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <button class="button" type="submit">Send request</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+        <p class="form-disclaimer">Bryndeli introduces carers. The family or employer employs or contracts the carer directly.</p>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2026 Bryndeli Ltd</span>
+      <span><a href="/">Bryndeli</a> · <a href="/carers">Find care work</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </div>
+  </footer>
+  <script>
+    const form = document.querySelector("#hire-form");
+    const status = form.querySelector(".form-status");
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const params = new URLSearchParams(location.search);
+      status.textContent = "Sending...";
+      try {
+        const response = await fetch("/api/hire-request", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            hiringAs: data.get("hiringAs"),
+            postcode: data.get("postcode"),
+            help: data.get("help"),
+            email: data.get("email"),
+            consent: data.get("consent") === "on",
+            website: data.get("website"),
+            utm_source: params.get("utm_source") || "",
+            utm_medium: params.get("utm_medium") || "",
+            utm_campaign: params.get("utm_campaign") || "",
+            utm_content: params.get("utm_content") || ""
+          })
+        });
+        const result = await response.json();
+        if (response.status === 503) status.textContent = "Requests open soon";
+        else if (!response.ok) status.textContent = result.error || "Please check the form and try again.";
+        else { status.textContent = "Thank you. We'll be in touch."; form.reset(); }
+      } catch (_) { status.textContent = "Please try again shortly."; }
+    });
+  </script>
+</body>
+</html>
