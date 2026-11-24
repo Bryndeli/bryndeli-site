@@ -52,6 +52,26 @@
       "source": "/survey",
       "destination": "https://forms.gle/TQkRicHvRtqxq64R6",
       "permanent": false
+    },
+    {
+      "source": "/families",
+      "destination": "/circle",
+      "permanent": false
+    },
+    {
+      "source": "/match",
+      "destination": "/carers",
+      "permanent": false
+    },
+    {
+      "source": "/privacy",
+      "destination": "/legal/privacy",
+      "permanent": false
+    },
+    {
+      "source": "/terms",
+      "destination": "/legal/terms",
+      "permanent": false
     }
   ]
 }

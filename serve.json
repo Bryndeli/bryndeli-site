@@ -1,0 +1,31 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/survey",
+      "destination": "https://forms.gle/TQkRicHvRtqxq64R6",
+      "type": 302
+    },
+    {
+      "source": "/families",
+      "destination": "/circle",
+      "type": 302
+    },
+    {
+      "source": "/match",
+      "destination": "/carers",
+      "type": 302
+    },
+    {
+      "source": "/privacy",
+      "destination": "/legal/privacy",
+      "type": 302
+    },
+    {
+      "source": "/terms",
+      "destination": "/legal/terms",
+      "type": 302
+    }
+  ]
+}

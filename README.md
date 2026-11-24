@@ -1,6 +1,6 @@
 # Bryndeli — bryndeli.co.uk
 
-The marketing site for **Bryndeli** — _The AI companion every frontline carer should have._
+The marketing site for **Bryndeli**, presenting Bryndeli Match and Bryndeli Circle.
 
 ---
 
